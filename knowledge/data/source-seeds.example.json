@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "title": "Design Systems Handbook",
+      "sourceUrl": "https://www.designbetter.co/design-systems-handbook",
+      "sourceName": "DesignBetter",
+      "author": "DesignBetter",
+      "publishedAt": "",
+      "category": "디자인 시스템",
+      "tags": ["design systems", "governance", "components"],
+      "summary": "A curated external source candidate for reviewing design system foundations, governance, and component practice.",
+      "concepts": ["design system governance", "component standards", "shared language"],
+      "query": "Design Systems Handbook governance components",
+      "reason": "Design system governance is an adjacent knowledge area that can strengthen reusable project judgment.",
+      "trustScore": 0.74,
+      "relevanceScore": 0.82
+    }
+  ]
+}

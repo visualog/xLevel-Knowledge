@@ -1,6 +1,7 @@
 const GRAPH_POSITIONS_KEY = "xlevel-knowledge-graph-positions";
 const KNOWLEDGE_STORAGE_KEY = "xlevel-knowledge";
 const CANDIDATES_STORAGE_KEY = "xlevel-knowledge-candidates";
+const REVIEW_ACTIONS_STORAGE_KEY = "xlevel-review-actions";
 
 function loadGraphPositions() {
   try {
@@ -10,9 +11,18 @@ function loadGraphPositions() {
   }
 }
 
+function loadReviewActions() {
+  try {
+    return JSON.parse(localStorage.getItem(REVIEW_ACTIONS_STORAGE_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
 const state = {
   data: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), entries: [] },
   candidateData: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), candidates: [] },
+  reviewActions: loadReviewActions(),
   selectedId: null,
   selectedTag: "",
   hoveredId: null,
@@ -41,6 +51,10 @@ const state = {
 
 const els = {
   cards: document.querySelector("#cards"),
+  reviewQueue: document.querySelector("#reviewQueue"),
+  reviewQueueTitle: document.querySelector("#reviewQueueTitle"),
+  reviewQueueSummary: document.querySelector("#reviewQueueSummary"),
+  reviewQueueCommand: document.querySelector("#reviewQueueCommand"),
   candidates: document.querySelector("#candidates"),
   graphPanel: document.querySelector("#graphPanel"),
   graphCanvas: document.querySelector("#graphCanvas"),
@@ -81,6 +95,8 @@ const els = {
   fileInput: document.querySelector("#fileInput"),
   importButton: document.querySelector("#importButton"),
   exportButton: document.querySelector("#exportButton"),
+  exportReviewActionsButton: document.querySelector("#exportReviewActionsButton"),
+  clearReviewActionsButton: document.querySelector("#clearReviewActionsButton"),
   newEntryButton: document.querySelector("#newEntryButton"),
   cardsViewButton: document.querySelector("#cardsViewButton"),
   candidatesViewButton: document.querySelector("#candidatesViewButton"),
@@ -165,6 +181,10 @@ function saveLocal() {
 function saveCandidatesLocal() {
   state.candidateData.updatedAt = new Date().toISOString().slice(0, 10);
   localStorage.setItem(CANDIDATES_STORAGE_KEY, JSON.stringify(state.candidateData, null, 2));
+}
+
+function saveReviewActionsLocal() {
+  localStorage.setItem(REVIEW_ACTIONS_STORAGE_KEY, JSON.stringify(state.reviewActions, null, 2));
 }
 
 function normalizeList(value) {
@@ -428,6 +448,7 @@ function renderCandidates() {
   const candidates = filteredCandidates();
   els.candidates.innerHTML = "";
   els.resultSummary.textContent = `${candidates.length} of ${(state.candidateData.candidates || []).length} candidates shown`;
+  renderReviewQueue();
 
   if (!candidates.length) {
     const empty = document.createElement("article");
@@ -461,6 +482,7 @@ function renderCandidates() {
       <dl class="candidate-meta">
         <dt>Query</dt><dd>${escapeHtml(meta.query || "-")}</dd>
         <dt>Reason</dt><dd>${escapeHtml(meta.reason || "-")}</dd>
+        <dt>Apply</dt><dd>Static-site actions are queued locally. Export review actions, then run the apply script to write repository files.</dd>
       </dl>
       <div class="tags">${(candidate.tags || []).slice(0, 5).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
       <div class="candidate-links">
@@ -498,6 +520,17 @@ function renderScore(label, value) {
       <strong>${Math.round(numeric * 100)}</strong>
     </div>
   `;
+}
+
+function renderReviewQueue() {
+  const count = state.reviewActions.length;
+  els.reviewQueueTitle.textContent = count ? `${count} review action${count === 1 ? "" : "s"} queued` : "No review actions queued";
+  els.reviewQueueSummary.textContent = count
+    ? "Export this queue and apply it with the script to update Markdown entries, candidates, and the rebuilt index."
+    : "Candidate actions in this static site stay local until exported and applied with the script.";
+  els.reviewQueueCommand.textContent = "node scripts/apply-candidates.mjs --review-file knowledge/data/review-actions.json";
+  els.exportReviewActionsButton.disabled = count === 0;
+  els.clearReviewActionsButton.disabled = count === 0;
 }
 
 function renderCards() {
@@ -546,6 +579,7 @@ function renderView() {
   document.body.classList.toggle("is-graph-mode", isGraph);
   document.body.classList.toggle("has-inspector", isGraph && Boolean(state.selectedId));
   els.cards.classList.toggle("is-hidden", isGraph || isCandidates);
+  els.reviewQueue.classList.toggle("is-hidden", !isCandidates);
   els.candidates.classList.toggle("is-hidden", !isCandidates);
   els.graphPanel.classList.toggle("is-hidden", !isGraph);
   els.cardsViewButton.classList.toggle("is-active", !isGraph && !isCandidates);
@@ -560,6 +594,7 @@ function renderView() {
     state.graph.needsFit = state.graph.needsFit || !state.graph.hasFit;
     renderGraph();
   }
+  if (isCandidates) renderReviewQueue();
 }
 
 function renderStats() {
@@ -687,6 +722,17 @@ function removeCandidate(id) {
   saveCandidatesLocal();
 }
 
+function queueReviewAction(action) {
+  state.reviewActions = [
+    ...state.reviewActions.filter((item) => item.candidateId !== action.candidateId),
+    {
+      ...action,
+      queuedAt: new Date().toISOString()
+    }
+  ];
+  saveReviewActionsLocal();
+}
+
 function handleCandidateAction(action, id) {
   const candidate = (state.candidateData.candidates || []).find((item) => item.id === id);
   if (!candidate) return;
@@ -695,12 +741,14 @@ function handleCandidateAction(action, id) {
     const entry = candidateToEntry(candidate);
     state.data.entries.unshift(entry);
     state.selectedId = entry.id;
+    queueReviewAction({ action: "approve", candidateId: id });
     removeCandidate(id);
     saveLocal();
-    showSaveFeedback("Candidate approved locally");
+    showSaveFeedback("Candidate approved locally and queued for export");
   } else if (action === "reject") {
+    queueReviewAction({ action: "reject", candidateId: id });
     removeCandidate(id);
-    showSaveFeedback("Candidate rejected locally");
+    showSaveFeedback("Candidate rejected locally and queued for export");
   } else if (action === "merge") {
     const target = state.data.entries.find((entry) => (candidate.connections || []).includes(entry.id));
     if (!target) {
@@ -713,9 +761,10 @@ function handleCandidateAction(action, id) {
     target.applications = uniqueList([...(target.applications || []), ...(candidate.applications || [])]);
     target.connections = uniqueList([...(target.connections || []), ...(candidate.connections || []).filter((connection) => connection !== target.id)]);
     state.selectedId = target.id;
+    queueReviewAction({ action: "merge", candidateId: id, into: target.id });
     removeCandidate(id);
     saveLocal();
-    showSaveFeedback("Candidate merged locally");
+    showSaveFeedback("Candidate merged locally and queued for export");
   }
 
   state.graph.needsFit = true;
@@ -1191,6 +1240,29 @@ function exportData() {
   URL.revokeObjectURL(url);
 }
 
+function exportReviewActions() {
+  const payload = {
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    applyCommand: "node scripts/apply-candidates.mjs --review-file knowledge/data/review-actions.json",
+    actions: state.reviewActions
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "review-actions.json";
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function clearReviewActions() {
+  state.reviewActions = [];
+  saveReviewActionsLocal();
+  renderReviewQueue();
+  showSaveFeedback("Review action queue cleared");
+}
+
 function importData(file) {
   const reader = new FileReader();
   reader.onload = () => {
@@ -1320,6 +1392,8 @@ els.graphCanvas.addEventListener("wheel", (event) => {
   setGraphTransform();
 });
 els.exportButton.addEventListener("click", exportData);
+els.exportReviewActionsButton.addEventListener("click", exportReviewActions);
+els.clearReviewActionsButton.addEventListener("click", clearReviewActions);
 els.importButton.addEventListener("click", () => els.fileInput.click());
 els.fileInput.addEventListener("change", (event) => {
   const [file] = event.target.files;

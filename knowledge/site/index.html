@@ -92,6 +92,18 @@
         </div>
 
         <section class="cards" id="cards" aria-live="polite"></section>
+        <section class="review-queue is-hidden" id="reviewQueue" aria-label="Review action export">
+          <div>
+            <p class="eyebrow">Repository apply queue</p>
+            <h3 id="reviewQueueTitle">No review actions queued</h3>
+            <p id="reviewQueueSummary">Candidate actions in this static site stay local until exported and applied with the script.</p>
+            <code id="reviewQueueCommand">node scripts/apply-candidates.mjs --review-file knowledge/data/review-actions.json</code>
+          </div>
+          <div class="review-queue__actions">
+            <button class="button button--secondary" id="exportReviewActionsButton" type="button">Export Review Actions</button>
+            <button class="button button--ghost" id="clearReviewActionsButton" type="button">Clear Queue</button>
+          </div>
+        </section>
         <section class="candidates is-hidden" id="candidates" aria-live="polite"></section>
 
         <section class="graph is-hidden" id="graphPanel" aria-label="Knowledge graph">

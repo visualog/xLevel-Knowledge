@@ -32,6 +32,7 @@ function parseArgs(argv) {
   const args = {
     knowledgePath: DEFAULT_KNOWLEDGE_PATH,
     outPath: DEFAULT_CANDIDATES_PATH,
+    sourceFile: "",
     limit: 20,
     dryRun: false
   };
@@ -48,6 +49,9 @@ function parseArgs(argv) {
       index += 1;
     } else if (value === "--knowledge") {
       args.knowledgePath = path.resolve(repoRoot, argv[index + 1] || args.knowledgePath);
+      index += 1;
+    } else if (value === "--source-file") {
+      args.sourceFile = path.resolve(repoRoot, argv[index + 1] || "");
       index += 1;
     }
   }
@@ -213,6 +217,63 @@ function makeCandidate({ kind, title, category, tags, concepts, seedEntries, que
   };
 }
 
+function candidateFromSource(source, entries) {
+  const category = source.category || "미분류";
+  const title = source.title || source.sourceUrl || "Untitled source";
+  const seedEntries = entries
+    .filter((entry) => !category || entry.category === category)
+    .slice(0, 5);
+  return {
+    id: `candidate-${slugify(title)}`,
+    title,
+    sourceUrl: source.sourceUrl || source.url || "",
+    sourceName: source.sourceName || source.publisher || "Curated source",
+    author: source.author || "",
+    publishedAt: source.publishedAt || "",
+    accessedAt: TODAY,
+    category,
+    tags: unique([...(source.tags || []), "curated-source"]).slice(0, 6),
+    summary:
+      source.summary ||
+      `${title} source metadata was added through a curated source file and needs source verification before durable use.`,
+    concepts: unique([...(source.concepts || []), category, "source review"]).slice(0, 8),
+    principles: unique(source.principles || [
+      "출처 메타데이터와 해석을 분리해서 저장한다.",
+      "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+      "검증 전에는 출처별 사실을 needs-verification 상태로 유지한다."
+    ]),
+    applications: unique(source.applications || [
+      "외부 자료 후보 검토",
+      "프로젝트 판단 기준 보강",
+      "기존 지식 그래프 연결 확장"
+    ]),
+    connections: unique([...(source.connections || []), ...seedEntries.map((entry) => entry.id)]).slice(0, 5),
+    verificationStatus: "review-needed",
+    candidateMeta: {
+      kind: "curated-source",
+      discoveredFrom: seedEntries.map((entry) => entry.id).slice(0, 5),
+      query: source.query || `${title} ${category} source review`,
+      relevanceScore: clampScore(source.relevanceScore || 0.72),
+      trustScore: clampScore(source.trustScore || 0.58),
+      duplicateScore: 0,
+      reason: source.reason || "Added from a curated source metadata file for review-first ingestion."
+    }
+  };
+}
+
+async function readSourceCandidates(sourceFile, entries, existingCandidates) {
+  if (!sourceFile) return [];
+  const sourceData = await readJson(sourceFile, { sources: [] });
+  const sources = Array.isArray(sourceData) ? sourceData : sourceData.sources || [];
+  return sources.map((source) => {
+    const candidate = candidateFromSource(source, entries);
+    candidate.connections = linkCandidate(candidate, entries);
+    if (!candidate.connections.length) candidate.connections = unique(source.connections || []).slice(0, 5);
+    candidate.candidateMeta.duplicateScore = duplicateScore(candidate, entries, existingCandidates);
+    return candidate;
+  });
+}
+
 function generateCandidates(entries, existingCandidates) {
   const connectionCounts = buildConnectionCounts(entries);
   const tagCounts = countTerms(entries, "tags");
@@ -331,14 +392,19 @@ async function main() {
   const existing = await readJson(args.outPath, { version: 1, updatedAt: TODAY, candidates: [] });
   const entries = knowledge.entries || [];
   const existingCandidates = existing.candidates || [];
-  const candidates = generateCandidates(entries, existingCandidates).slice(0, args.limit);
+  const sourceCandidates = await readSourceCandidates(args.sourceFile, entries, existingCandidates);
+  const generatedCandidates = generateCandidates(entries, [...existingCandidates, ...sourceCandidates]);
+  const candidates = [...sourceCandidates, ...generatedCandidates]
+    .filter((candidate, index, list) => list.findIndex((item) => item.id === candidate.id) === index)
+    .slice(0, args.limit);
   const output = {
     version: 1,
     updatedAt: TODAY,
     generatedFrom: {
       knowledgePath: path.relative(repoRoot, args.knowledgePath),
+      sourceFile: args.sourceFile ? path.relative(repoRoot, args.sourceFile) : "",
       entryCount: entries.length,
-      mode: "deterministic-review-first"
+      mode: args.sourceFile ? "curated-source-review-first" : "deterministic-review-first"
     },
     candidates
   };
@@ -367,4 +433,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-
