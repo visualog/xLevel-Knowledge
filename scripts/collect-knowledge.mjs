@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 const DEFAULT_KNOWLEDGE_PATH = path.join(repoRoot, "knowledge/data/knowledge.json");
 const DEFAULT_CANDIDATES_PATH = path.join(repoRoot, "knowledge/data/candidates.json");
+const DEFAULT_QUERY_OUT_PATH = path.join(repoRoot, "knowledge/data/discovery-queries.json");
 const TODAY = localIsoDate();
 
 const ADJACENT_TOPICS = {
@@ -27,6 +28,7 @@ const SOURCE_HINTS = [
   "design system guide",
   "practical framework"
 ];
+const STOP_TERMS = new Set(["plusx", "플엑익힘책", "출처 기반 학습", "실무 지식화"]);
 
 function parseArgs(argv) {
   const args = {
@@ -36,6 +38,7 @@ function parseArgs(argv) {
     feedFile: "",
     urls: [],
     urlFile: "",
+    queryOutPath: "",
     limit: 20,
     dryRun: false
   };
@@ -66,6 +69,10 @@ function parseArgs(argv) {
       index += 1;
     } else if (value === "--url-file") {
       args.urlFile = path.resolve(repoRoot, argv[index + 1] || "");
+      index += 1;
+    } else if (value === "--query-out") {
+      const next = argv[index + 1] || DEFAULT_QUERY_OUT_PATH;
+      args.queryOutPath = path.resolve(repoRoot, next);
       index += 1;
     }
   }
@@ -113,8 +120,18 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function queryText(values, suffix = "") {
+  return [...new Set(values.map((value) => String(value || "").trim()).filter(Boolean))]
+    .concat(suffix ? [suffix] : [])
+    .join(" ");
+}
+
 function clampScore(value) {
   return Number(Math.max(0.01, Math.min(0.99, value)).toFixed(2));
+}
+
+async function writeJson(filePath, value) {
+  await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
 function termSet(entry) {
@@ -148,7 +165,7 @@ function countTerms(entries, key) {
   for (const entry of entries) {
     for (const value of entry[key] || []) {
       const normalized = normalizeText(value);
-      if (!normalized || normalized === "plusx" || normalized === "플엑익힘책") continue;
+      if (!normalized || STOP_TERMS.has(normalized) || STOP_TERMS.has(value)) continue;
       counts.set(value, (counts.get(value) || 0) + 1);
     }
   }
@@ -412,6 +429,33 @@ function parseHtmlSource(html, source) {
   };
 }
 
+function queryRecords(candidates) {
+  const seen = new Set();
+  const records = [];
+  for (const candidate of candidates) {
+    const meta = candidate.candidateMeta || {};
+    const query = meta.query || "";
+    if (!query || seen.has(query)) continue;
+    seen.add(query);
+    records.push({
+      query,
+      candidateId: candidate.id,
+      candidateTitle: candidate.title,
+      category: candidate.category || "",
+      reason: meta.reason || "",
+      kind: meta.kind || "",
+      relevanceScore: meta.relevanceScore || 0,
+      trustScore: meta.trustScore || 0,
+      duplicateScore: meta.duplicateScore || 0,
+      connections: candidate.connections || [],
+      sourceUrl: candidate.sourceUrl || "",
+      suggestedNextInput: candidate.sourceUrl ? "review-source-url" : "search-query-then-add-url",
+      reviewStatus: "needs-human-search-review"
+    });
+  }
+  return records;
+}
+
 async function readUrlList(urlFile) {
   if (!urlFile) return [];
   const text = await readFile(urlFile, "utf8");
@@ -521,7 +565,7 @@ function generateCandidates(entries, existingCandidates) {
         tags: [...(entry.tags || []), "사례분석"].filter((tag) => tag !== "PlusX" && tag !== "플엑익힘책"),
         concepts: [primaryConcept, ...(entry.concepts || []).slice(0, 4), "판단 기준"],
         seedEntries: [entry],
-        query: `${primaryConcept} ${entry.category || ""} case study design principles`,
+        query: queryText([primaryConcept, entry.category], "case study design principles"),
         relevanceBase: 0.72 + Math.max(0, 4 - (connectionCounts.get(entry.id) || 0)) * 0.04,
         trustBase: 0.58,
         reason: `"${entry.title}" has useful concepts but relatively weak graph connectivity, so adjacent cases can improve reuse.`
@@ -637,9 +681,22 @@ async function main() {
     },
     candidates
   };
+  const queryOutput = args.queryOutPath
+    ? {
+        version: 1,
+        updatedAt: TODAY,
+        generatedFrom: output.generatedFrom,
+        count: queryRecords(candidates).length,
+        queries: queryRecords(candidates)
+      }
+    : null;
 
   if (!args.dryRun) {
-    await writeFile(args.outPath, `${JSON.stringify(output, null, 2)}\n`);
+    await writeJson(args.outPath, output);
+  }
+
+  if (queryOutput) {
+    await writeJson(args.queryOutPath, queryOutput);
   }
 
   console.log(
@@ -647,8 +704,10 @@ async function main() {
       {
         dryRun: args.dryRun,
         out: path.relative(repoRoot, args.outPath),
+        queryOut: args.queryOutPath ? path.relative(repoRoot, args.queryOutPath) : "",
         entries: entries.length,
         candidates: candidates.length,
+        queries: queryOutput?.count || 0,
         linkedCandidates: candidates.filter((candidate) => candidate.connections.length > 0).length,
         topQueries: candidates.slice(0, 5).map((candidate) => candidate.candidateMeta.query)
       },

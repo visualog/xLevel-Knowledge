@@ -34,6 +34,7 @@ Current limitations:
 - A local-only write bridge can apply exported review actions when the site is served by `scripts/knowledge-server.mjs`.
 - Durable apply flow exists for approve, reject, merge, and review-file workflows.
 - Discovery supports deterministic generation, curated JSON sources, RSS/Atom feed metadata, and manual URL metadata extraction.
+- Discovery can export structured search-query handoffs for human review or later search/browser adapters.
 - Live search/browser/API discovery is not yet fully automated.
 - Git commit and push remain explicit operator actions.
 
@@ -43,6 +44,7 @@ Implemented command examples:
 node scripts/collect-knowledge.mjs --dry-run --source-file knowledge/data/source-seeds.example.json --limit 5
 node scripts/collect-knowledge.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
 node scripts/collect-knowledge.mjs --dry-run --url-file knowledge/data/url-seeds.example.txt --limit 5
+node scripts/collect-knowledge.mjs --dry-run --query-out /private/tmp/xlevel-discovery-queries.json --limit 5
 node scripts/run-learning-loop.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
 PORT=8091 node scripts/knowledge-server.mjs
 ```
@@ -134,7 +136,7 @@ Initial adapters may include:
 - curated URL list input: implemented with `--source-file`
 - RSS or feed input: implemented with `--feed-file`
 - manual URL input: implemented with `--url` and `--url-file`
-- search query output for human review
+- search query output for human review: implemented with `--query-out`
 - later: browser or search API integration
 
 For each discovered source, collect:

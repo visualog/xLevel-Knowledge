@@ -6,6 +6,7 @@ import { spawnSync } from "node:child_process";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 const reportPath = path.join(repoRoot, "knowledge/data/learning-loop-report.json");
+const defaultQueryOutPath = path.join(repoRoot, "knowledge/data/discovery-queries.json");
 
 function parseArgs(argv) {
   const args = {
@@ -14,6 +15,7 @@ function parseArgs(argv) {
     feedFile: "",
     urls: [],
     urlFile: "",
+    queryOutPath: "",
     reviewFile: "",
     dryRun: false,
     skipBuild: false
@@ -40,6 +42,10 @@ function parseArgs(argv) {
       index += 1;
     } else if (value === "--url-file") {
       args.urlFile = path.resolve(repoRoot, argv[index + 1] || "");
+      index += 1;
+    } else if (value === "--query-out") {
+      const next = argv[index + 1] || defaultQueryOutPath;
+      args.queryOutPath = path.resolve(repoRoot, next);
       index += 1;
     } else if (value === "--dry-run") {
       args.dryRun = true;
@@ -94,6 +100,7 @@ async function main() {
   if (args.feedFile) collectArgs.push("--feed-file", args.feedFile);
   for (const sourceUrl of args.urls) collectArgs.push("--url", sourceUrl);
   if (args.urlFile) collectArgs.push("--url-file", args.urlFile);
+  if (args.queryOutPath) collectArgs.push("--query-out", args.queryOutPath);
   if (args.dryRun) collectArgs.push("--dry-run");
   steps.push(runNode(collectArgs));
 
@@ -114,6 +121,7 @@ async function main() {
     feedFile: args.feedFile ? (/^https?:\/\//.test(args.feedFile) ? args.feedFile : path.relative(repoRoot, args.feedFile)) : "",
     urls: args.urls.map((sourceUrl) => (/^https?:\/\//.test(sourceUrl) ? sourceUrl : path.relative(repoRoot, sourceUrl))),
     urlFile: args.urlFile ? path.relative(repoRoot, args.urlFile) : "",
+    queryOut: args.queryOutPath ? path.relative(repoRoot, args.queryOutPath) : "",
     reviewFile: args.reviewFile ? path.relative(repoRoot, args.reviewFile) : "",
     reviewActions: await readReviewActionCount(args.reviewFile),
     collect: parseJsonOutput(collectStep),

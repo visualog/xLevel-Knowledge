@@ -32,4 +32,7 @@ node scripts/collect-knowledge.mjs --source-file knowledge/data/source-seeds.exa
 node scripts/collect-knowledge.mjs --feed-file knowledge/data/feed-seeds.example.xml
 node scripts/collect-knowledge.mjs --url-file knowledge/data/url-seeds.example.txt
 node scripts/collect-knowledge.mjs --url https://example.com/source
+node scripts/collect-knowledge.mjs --query-out knowledge/data/discovery-queries.json
 ```
+
+Use `--query-out` when the next step needs a human-search handoff or a future browser/search adapter input.
