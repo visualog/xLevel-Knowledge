@@ -50,6 +50,7 @@ node scripts/search-discovery.mjs --query-file /private/tmp/xlevel-discovery-que
 node scripts/collect-knowledge.mjs --dry-run --source-file /private/tmp/xlevel-search-sources.json --limit 5
 node scripts/run-learning-loop.mjs --dry-run --query-out /private/tmp/xlevel-loop-queries.json --search-out /private/tmp/xlevel-loop-sources.json --limit 5
 node scripts/run-learning-loop.mjs --dry-run --query-out /private/tmp/xlevel-loop-queries.json --search-out /private/tmp/xlevel-loop-sources.json --ingest-search-results --limit 5
+node scripts/run-automation-cycle.mjs --config knowledge/data/automation-cycle.example.json
 node scripts/run-learning-loop.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
 PORT=8091 node scripts/knowledge-server.mjs
 ```
@@ -187,6 +188,14 @@ node scripts/run-learning-loop.mjs --query-out knowledge/data/discovery-queries.
 ```
 
 This writes search source seeds, turns them into review-needed candidates, rebuilds the index, and still requires explicit review before approval.
+
+Safe repeatable runner:
+
+```bash
+node scripts/run-automation-cycle.mjs --config knowledge/data/automation-cycle.example.json
+```
+
+The example config is dry-run by default and is suitable for schedulers or manual repeated checks. Use `--write` only when the operator intentionally wants the configured cycle to write its outputs.
 
 ## Product Rules
 

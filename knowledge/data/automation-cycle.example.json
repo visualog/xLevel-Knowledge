@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "name": "safe-search-ingest-dry-run",
+  "dryRun": true,
+  "limit": 5,
+  "queryOut": "/private/tmp/xlevel-cycle-queries.json",
+  "searchOut": "/private/tmp/xlevel-cycle-sources.json",
+  "searchMockHtml": "knowledge/data/search-results.example.html",
+  "ingestSearchResults": true,
+  "skipBuild": false,
+  "reportOut": "/private/tmp/xlevel-cycle-report.json"
+}
