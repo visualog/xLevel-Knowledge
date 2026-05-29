@@ -3,6 +3,13 @@ const KNOWLEDGE_STORAGE_KEY = "xlevel-knowledge";
 const CANDIDATES_STORAGE_KEY = "xlevel-knowledge-candidates";
 const REVIEW_ACTIONS_STORAGE_KEY = "xlevel-review-actions";
 
+function initialViewFromHash() {
+  if (window.location.hash === "#graph") return "graph";
+  if (window.location.hash === "#candidates") return "candidates";
+  if (window.location.hash === "#automation") return "automation";
+  return "cards";
+}
+
 function loadGraphPositions() {
   try {
     return JSON.parse(localStorage.getItem(GRAPH_POSITIONS_KEY) || "{}");
@@ -22,12 +29,14 @@ function loadReviewActions() {
 const state = {
   data: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), entries: [] },
   candidateData: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), candidates: [] },
+  automationConfig: null,
+  automationConfigError: "",
   reviewActions: loadReviewActions(),
   writeBridge: { available: false, checked: false },
   selectedId: null,
   selectedTag: "",
   hoveredId: null,
-  view: window.location.hash === "#graph" ? "graph" : window.location.hash === "#candidates" ? "candidates" : "cards",
+  view: initialViewFromHash(),
   graphLinks: [],
   graph: {
     scale: 1,
@@ -57,6 +66,7 @@ const els = {
   reviewQueueSummary: document.querySelector("#reviewQueueSummary"),
   reviewQueueCommand: document.querySelector("#reviewQueueCommand"),
   candidates: document.querySelector("#candidates"),
+  automationPanel: document.querySelector("#automationPanel"),
   graphPanel: document.querySelector("#graphPanel"),
   graphCanvas: document.querySelector("#graphCanvas"),
   graphViewport: document.querySelector("#graphViewport"),
@@ -101,6 +111,7 @@ const els = {
   newEntryButton: document.querySelector("#newEntryButton"),
   cardsViewButton: document.querySelector("#cardsViewButton"),
   candidatesViewButton: document.querySelector("#candidatesViewButton"),
+  automationViewButton: document.querySelector("#automationViewButton"),
   graphViewButton: document.querySelector("#graphViewButton"),
   backToCardsButton: document.querySelector("#backToCardsButton"),
   resetGraphButton: document.querySelector("#resetGraphButton"),
@@ -127,6 +138,49 @@ const fields = [
   return acc;
 }, {});
 
+const automationCommands = [
+  {
+    label: "Run safe cycle",
+    command: "node scripts/run-automation-cycle.mjs --config knowledge/data/automation-cycle.example.json",
+    note: "Uses the checked-in dry-run config, mock search fixture, and temporary output paths."
+  },
+  {
+    label: "Run search ingest",
+    command: "node scripts/run-learning-loop.mjs --query-out knowledge/data/discovery-queries.json --search-out knowledge/data/search-source-seeds.json --ingest-search-results --limit 20",
+    note: "Expands discovery queries into source seeds, ingests candidates, and rebuilds data."
+  },
+  {
+    label: "Apply reviewed queue",
+    command: "node scripts/apply-candidates.mjs --review-file knowledge/data/review-actions.json",
+    note: "Turns approved or merged candidate actions into repository Markdown entries and index updates."
+  },
+  {
+    label: "Start write bridge",
+    command: "PORT=8091 node scripts/knowledge-server.mjs",
+    note: "Lets the Candidates tab apply actions directly to local repository files."
+  },
+  {
+    label: "Preview scheduler",
+    command: "node scripts/install-automation-scheduler.mjs print",
+    note: "Prints the launchd job that can run the automation cycle periodically."
+  },
+  {
+    label: "Check scheduler",
+    command: "node scripts/install-automation-scheduler.mjs status",
+    note: "Shows whether the local launchd scheduler is installed and loaded."
+  },
+  {
+    label: "Install scheduler",
+    command: "node scripts/install-automation-scheduler.mjs install",
+    note: "Installs the local launchd scheduler after reviewing the printed job."
+  },
+  {
+    label: "Uninstall scheduler",
+    command: "node scripts/install-automation-scheduler.mjs uninstall",
+    note: "Removes the local scheduler without changing collected knowledge files."
+  }
+];
+
 async function loadData() {
   const stored = localStorage.getItem(KNOWLEDGE_STORAGE_KEY);
   let localData = null;
@@ -149,8 +203,22 @@ async function loadData() {
   }
 
   await loadCandidates();
+  await loadAutomationConfig();
   render();
   detectWriteBridge();
+}
+
+async function loadAutomationConfig() {
+  try {
+    const response = await fetch("../data/automation-cycle.example.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    state.automationConfig = await response.json();
+    state.automationConfigError = "";
+  } catch (error) {
+    console.warn("Could not load automation cycle config.", error);
+    state.automationConfig = null;
+    state.automationConfigError = error.message || "Unavailable";
+  }
 }
 
 async function detectWriteBridge() {
@@ -551,6 +619,100 @@ function renderReviewQueue() {
   els.clearReviewActionsButton.disabled = count === 0;
 }
 
+function renderAutomation() {
+  const config = state.automationConfig || {};
+  const candidateCount = (state.candidateData.candidates || []).length;
+  const queuedCount = state.reviewActions.length;
+  const dryRun = config.dryRun !== false;
+  const statusLabel = dryRun ? "Dry-run default" : "Apply enabled";
+  const flow = [
+    ["Discover", "Export search queries from existing knowledge gaps."],
+    ["Expand", "Resolve queries into source seed URLs."],
+    ["Ingest", "Collect candidate summaries without copying article bodies."],
+    ["Review", "Approve, reject, or merge candidates in the Candidates tab."],
+    ["Apply", "Write approved learning into Markdown entries and rebuilt JSON."],
+    ["Repeat", "Run manually or install the local scheduler."]
+  ];
+  const configRows = [
+    ["Config", config.name || "automation-cycle.example.json"],
+    ["Mode", statusLabel],
+    ["Limit", config.limit ?? "-"],
+    ["Query out", config.queryOut || "-"],
+    ["Search out", config.searchOut || "-"],
+    ["Report out", config.reportOut || "-"]
+  ];
+
+  els.automationPanel.innerHTML = `
+    <section class="automation-hero">
+      <div>
+        <p class="eyebrow">Self-learning loop</p>
+        <h3>Review-first automation is wired, but repository writes stay explicit.</h3>
+        <p>Discovery can keep collecting and organizing candidate learning data. Applying it still goes through review actions so approved material becomes Markdown entries and rebuilt indexes.</p>
+      </div>
+      <div class="automation-status">
+        <span>${escapeHtml(statusLabel)}</span>
+        <strong>${candidateCount}</strong>
+        <small>Candidates ready · ${queuedCount} queued action${queuedCount === 1 ? "" : "s"}</small>
+      </div>
+    </section>
+
+    <section class="automation-flow" aria-label="Automation flow">
+      ${flow
+        .map(
+          ([label, description], index) => `
+            <article class="automation-step">
+              <span>${index + 1}</span>
+              <h3>${escapeHtml(label)}</h3>
+              <p>${escapeHtml(description)}</p>
+            </article>
+          `
+        )
+        .join("")}
+    </section>
+
+    <section class="automation-grid">
+      <article class="automation-card">
+        <p class="eyebrow">Loaded cycle config</p>
+        <dl class="automation-config">
+          ${configRows
+            .map(([label, value]) => `<dt>${escapeHtml(label)}</dt><dd>${escapeHtml(String(value))}</dd>`)
+            .join("")}
+        </dl>
+        ${
+          state.automationConfigError
+            ? `<p class="automation-warning">Config could not be loaded: ${escapeHtml(state.automationConfigError)}</p>`
+            : ""
+        }
+      </article>
+
+      <article class="automation-card">
+        <p class="eyebrow">What approve does</p>
+        <h3>Approve turns a candidate into durable project knowledge.</h3>
+        <p>With the write bridge connected, the site calls the local server and updates repository files immediately. Without it, the static site queues an export that the apply script can commit to Markdown and JSON.</p>
+      </article>
+    </section>
+
+    <section class="automation-card">
+      <p class="eyebrow">Operator commands</p>
+      <div class="command-list">
+        ${automationCommands
+          .map(
+            (item) => `
+              <article class="command-item">
+                <div>
+                  <h3>${escapeHtml(item.label)}</h3>
+                  <p>${escapeHtml(item.note)}</p>
+                </div>
+                <code>${escapeHtml(item.command)}</code>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderCards() {
   const entries = filteredEntries();
   const links = buildLinks(state.data.entries);
@@ -594,25 +756,32 @@ function renderCards() {
 function renderView() {
   const isGraph = state.view === "graph";
   const isCandidates = state.view === "candidates";
+  const isAutomation = state.view === "automation";
   document.body.classList.toggle("is-graph-mode", isGraph);
   document.body.classList.toggle("has-inspector", isGraph && Boolean(state.selectedId));
-  els.cards.classList.toggle("is-hidden", isGraph || isCandidates);
+  els.cards.classList.toggle("is-hidden", isGraph || isCandidates || isAutomation);
   els.reviewQueue.classList.toggle("is-hidden", !isCandidates);
   els.candidates.classList.toggle("is-hidden", !isCandidates);
+  els.automationPanel.classList.toggle("is-hidden", !isAutomation);
   els.graphPanel.classList.toggle("is-hidden", !isGraph);
-  els.cardsViewButton.classList.toggle("is-active", !isGraph && !isCandidates);
+  els.cardsViewButton.classList.toggle("is-active", !isGraph && !isCandidates && !isAutomation);
   els.candidatesViewButton.classList.toggle("is-active", isCandidates);
+  els.automationViewButton.classList.toggle("is-active", isAutomation);
   els.graphViewButton.classList.toggle("is-active", isGraph);
-  els.newEntryButton.classList.toggle("is-hidden", isGraph || isCandidates);
-  els.workspaceTitle.textContent = isGraph ? "Knowledge Graph" : isCandidates ? "Candidate Review" : "Knowledge Cards";
+  els.newEntryButton.classList.toggle("is-hidden", isGraph || isCandidates || isAutomation);
+  els.workspaceTitle.textContent = isGraph ? "Knowledge Graph" : isCandidates ? "Candidate Review" : isAutomation ? "Automation" : "Knowledge Cards";
   if (isGraph) {
     els.resultSummary.textContent = `${filteredEntries().length} cards mapped by category and shared concepts`;
+  } else if (isAutomation) {
+    const configName = state.automationConfig?.name || "automation-cycle.example.json";
+    els.resultSummary.textContent = `${configName} · ${(state.candidateData.candidates || []).length} candidates · ${state.reviewActions.length} queued actions`;
   }
   if (isGraph) {
     state.graph.needsFit = state.graph.needsFit || !state.graph.hasFit;
     renderGraph();
   }
   if (isCandidates) renderReviewQueue();
+  if (isAutomation) renderAutomation();
 }
 
 function renderStats() {
@@ -641,6 +810,7 @@ function render() {
   renderFilters();
   renderCards();
   renderCandidates();
+  renderAutomation();
   renderStats();
   renderDetail();
   renderView();
@@ -1384,6 +1554,11 @@ els.candidatesViewButton.addEventListener("click", () => {
   history.replaceState(null, "", "#candidates");
   renderView();
 });
+els.automationViewButton.addEventListener("click", () => {
+  state.view = "automation";
+  history.replaceState(null, "", "#automation");
+  renderView();
+});
 els.backToCardsButton.addEventListener("click", () => {
   state.view = "cards";
   history.replaceState(null, "", window.location.pathname + window.location.search);
@@ -1457,7 +1632,7 @@ els.fileInput.addEventListener("change", (event) => {
   if (file) importData(file);
 });
 window.addEventListener("hashchange", () => {
-  state.view = window.location.hash === "#graph" ? "graph" : window.location.hash === "#candidates" ? "candidates" : "cards";
+  state.view = initialViewFromHash();
   state.graph.needsFit = state.view === "graph";
   renderView();
 });
