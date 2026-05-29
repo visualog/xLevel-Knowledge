@@ -1,4 +1,6 @@
 const GRAPH_POSITIONS_KEY = "xlevel-knowledge-graph-positions";
+const KNOWLEDGE_STORAGE_KEY = "xlevel-knowledge";
+const CANDIDATES_STORAGE_KEY = "xlevel-knowledge-candidates";
 
 function loadGraphPositions() {
   try {
@@ -10,10 +12,11 @@ function loadGraphPositions() {
 
 const state = {
   data: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), entries: [] },
+  candidateData: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), candidates: [] },
   selectedId: null,
   selectedTag: "",
   hoveredId: null,
-  view: window.location.hash === "#graph" ? "graph" : "cards",
+  view: window.location.hash === "#graph" ? "graph" : window.location.hash === "#candidates" ? "candidates" : "cards",
   graphLinks: [],
   graph: {
     scale: 1,
@@ -38,6 +41,7 @@ const state = {
 
 const els = {
   cards: document.querySelector("#cards"),
+  candidates: document.querySelector("#candidates"),
   graphPanel: document.querySelector("#graphPanel"),
   graphCanvas: document.querySelector("#graphCanvas"),
   graphViewport: document.querySelector("#graphViewport"),
@@ -56,6 +60,7 @@ const els = {
   densityRange: document.querySelector("#densityRange"),
   entryCount: document.querySelector("#entryCount"),
   linkCount: document.querySelector("#linkCount"),
+  candidateCount: document.querySelector("#candidateCount"),
   topEntryCount: document.querySelector("#topEntryCount"),
   topCategoryCount: document.querySelector("#topCategoryCount"),
   topLinkCount: document.querySelector("#topLinkCount"),
@@ -78,6 +83,7 @@ const els = {
   exportButton: document.querySelector("#exportButton"),
   newEntryButton: document.querySelector("#newEntryButton"),
   cardsViewButton: document.querySelector("#cardsViewButton"),
+  candidatesViewButton: document.querySelector("#candidatesViewButton"),
   graphViewButton: document.querySelector("#graphViewButton"),
   backToCardsButton: document.querySelector("#backToCardsButton"),
   resetGraphButton: document.querySelector("#resetGraphButton"),
@@ -105,7 +111,7 @@ const fields = [
 }, {});
 
 async function loadData() {
-  const stored = localStorage.getItem("xlevel-knowledge");
+  const stored = localStorage.getItem(KNOWLEDGE_STORAGE_KEY);
   let localData = null;
   if (stored) localData = JSON.parse(stored);
 
@@ -125,12 +131,40 @@ async function loadData() {
     if (localData) state.data = localData;
   }
 
+  await loadCandidates();
   render();
+}
+
+async function loadCandidates() {
+  const stored = localStorage.getItem(CANDIDATES_STORAGE_KEY);
+  let localData = null;
+  if (stored) localData = JSON.parse(stored);
+
+  try {
+    const response = await fetch("../data/candidates.json", { cache: "no-store" });
+    if (response.ok) {
+      const bundledData = await response.json();
+      const localCount = localData?.candidates?.length || 0;
+      const bundledCount = bundledData?.candidates?.length || 0;
+      const bundledIsNewer = String(bundledData.updatedAt || "") > String(localData?.updatedAt || "");
+      state.candidateData = !localData || (localCount === 0 && bundledCount > 0) || bundledIsNewer ? bundledData : localData;
+    } else if (localData) {
+      state.candidateData = localData;
+    }
+  } catch (error) {
+    console.warn("Could not load bundled candidate data.", error);
+    if (localData) state.candidateData = localData;
+  }
 }
 
 function saveLocal() {
   state.data.updatedAt = new Date().toISOString().slice(0, 10);
-  localStorage.setItem("xlevel-knowledge", JSON.stringify(state.data, null, 2));
+  localStorage.setItem(KNOWLEDGE_STORAGE_KEY, JSON.stringify(state.data, null, 2));
+}
+
+function saveCandidatesLocal() {
+  state.candidateData.updatedAt = new Date().toISOString().slice(0, 10);
+  localStorage.setItem(CANDIDATES_STORAGE_KEY, JSON.stringify(state.candidateData, null, 2));
 }
 
 function normalizeList(value) {
@@ -310,8 +344,43 @@ function filteredEntries() {
   });
 }
 
+function filteredCandidates() {
+  const query = els.searchInput.value.trim().toLowerCase();
+  const category = els.categoryFilter.value;
+  const status = els.statusFilter.value;
+  const tag = state.selectedTag;
+
+  return (state.candidateData.candidates || []).filter((candidate) => {
+    const searchable = [
+      candidate.title,
+      candidate.author,
+      candidate.category,
+      candidate.summary,
+      candidate.candidateMeta?.query,
+      candidate.candidateMeta?.reason,
+      ...(candidate.tags || []),
+      ...(candidate.concepts || []),
+      ...(candidate.principles || [])
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return (
+      (!query || searchable.includes(query)) &&
+      (!category || candidate.category === category) &&
+      (!status || candidate.verificationStatus === status) &&
+      (!tag || (candidate.tags || []).includes(tag))
+    );
+  });
+}
+
 function renderFilters() {
-  const categories = [...new Set(state.data.entries.map((entry) => entry.category).filter(Boolean))].sort();
+  const categories = [
+    ...new Set([
+      ...state.data.entries.map((entry) => entry.category).filter(Boolean),
+      ...(state.candidateData.candidates || []).map((candidate) => candidate.category).filter(Boolean)
+    ])
+  ].sort();
   const current = els.categoryFilter.value;
   els.categoryFilter.innerHTML = '<option value="">All categories</option>';
   for (const category of categories) {
@@ -322,7 +391,12 @@ function renderFilters() {
   }
   els.categoryFilter.value = current;
 
-  const tags = [...new Set(state.data.entries.flatMap((entry) => entry.tags || []))]
+  const tags = [
+    ...new Set([
+      ...state.data.entries.flatMap((entry) => entry.tags || []),
+      ...(state.candidateData.candidates || []).flatMap((candidate) => candidate.tags || [])
+    ])
+  ]
     .filter((tag) => tag !== "PlusX" && tag !== "플엑익힘책")
     .sort((a, b) => a.localeCompare(b, "ko"));
   els.tagFilters.innerHTML = "";
@@ -348,6 +422,82 @@ function renderFilters() {
     });
     els.tagFilters.append(button);
   }
+}
+
+function renderCandidates() {
+  const candidates = filteredCandidates();
+  els.candidates.innerHTML = "";
+  els.resultSummary.textContent = `${candidates.length} of ${(state.candidateData.candidates || []).length} candidates shown`;
+
+  if (!candidates.length) {
+    const empty = document.createElement("article");
+    empty.className = "candidate-card";
+    empty.innerHTML = "<h3>No candidates in review</h3><p class=\"card__summary\">Run the collection script or clear candidate filters to review generated source opportunities.</p>";
+    els.candidates.append(empty);
+    return;
+  }
+
+  for (const candidate of candidates) {
+    const meta = candidate.candidateMeta || {};
+    const connections = (candidate.connections || [])
+      .map((id) => state.data.entries.find((entry) => entry.id === id))
+      .filter(Boolean);
+    const card = document.createElement("article");
+    card.className = "candidate-card";
+    card.innerHTML = `
+      <div class="candidate-card__top">
+        <div>
+          <p class="eyebrow">${escapeHtml(candidate.category || "Uncategorized")}</p>
+          <h3>${escapeHtml(candidate.title || "Untitled candidate")}</h3>
+        </div>
+        <span class="status status--review-needed">${escapeHtml(candidate.verificationStatus || "review-needed")}</span>
+      </div>
+      <p class="candidate-card__summary">${escapeHtml(candidate.summary || "No summary yet.")}</p>
+      <div class="score-row" aria-label="Candidate scores">
+        ${renderScore("Relevance", meta.relevanceScore)}
+        ${renderScore("Trust", meta.trustScore)}
+        ${renderScore("Duplicate", meta.duplicateScore)}
+      </div>
+      <dl class="candidate-meta">
+        <dt>Query</dt><dd>${escapeHtml(meta.query || "-")}</dd>
+        <dt>Reason</dt><dd>${escapeHtml(meta.reason || "-")}</dd>
+      </dl>
+      <div class="tags">${(candidate.tags || []).slice(0, 5).map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join("")}</div>
+      <div class="candidate-links">
+        <span class="field-label">Recommended links</span>
+        <div class="connection-list">
+          ${connections.slice(0, 4).map((entry) => `<button class="connection" type="button" data-id="${escapeHtml(entry.id)}">${escapeHtml(entry.title)}</button>`).join("") || "<span class=\"card__meta\">No links suggested</span>"}
+        </div>
+      </div>
+      <div class="candidate-actions">
+        <button class="button" type="button" data-action="approve" data-id="${escapeHtml(candidate.id)}">Approve</button>
+        <button class="button button--secondary" type="button" data-action="merge" data-id="${escapeHtml(candidate.id)}">Merge first link</button>
+        <button class="button button--ghost" type="button" data-action="reject" data-id="${escapeHtml(candidate.id)}">Reject</button>
+      </div>
+    `;
+    card.querySelectorAll(".connection").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.view = "cards";
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+        selectEntry(button.dataset.id);
+        renderView();
+      });
+    });
+    card.querySelectorAll("[data-action]").forEach((button) => {
+      button.addEventListener("click", () => handleCandidateAction(button.dataset.action, button.dataset.id));
+    });
+    els.candidates.append(card);
+  }
+}
+
+function renderScore(label, value) {
+  const numeric = Number(value || 0);
+  return `
+    <div class="score">
+      <span>${escapeHtml(label)}</span>
+      <strong>${Math.round(numeric * 100)}</strong>
+    </div>
+  `;
 }
 
 function renderCards() {
@@ -392,13 +542,17 @@ function renderCards() {
 
 function renderView() {
   const isGraph = state.view === "graph";
+  const isCandidates = state.view === "candidates";
   document.body.classList.toggle("is-graph-mode", isGraph);
   document.body.classList.toggle("has-inspector", isGraph && Boolean(state.selectedId));
-  els.cards.classList.toggle("is-hidden", isGraph);
+  els.cards.classList.toggle("is-hidden", isGraph || isCandidates);
+  els.candidates.classList.toggle("is-hidden", !isCandidates);
   els.graphPanel.classList.toggle("is-hidden", !isGraph);
-  els.cardsViewButton.classList.toggle("is-active", !isGraph);
+  els.cardsViewButton.classList.toggle("is-active", !isGraph && !isCandidates);
+  els.candidatesViewButton.classList.toggle("is-active", isCandidates);
   els.graphViewButton.classList.toggle("is-active", isGraph);
-  els.workspaceTitle.textContent = isGraph ? "Knowledge Graph" : "Knowledge Cards";
+  els.newEntryButton.classList.toggle("is-hidden", isGraph || isCandidates);
+  els.workspaceTitle.textContent = isGraph ? "Knowledge Graph" : isCandidates ? "Candidate Review" : "Knowledge Cards";
   if (isGraph) {
     els.resultSummary.textContent = `${filteredEntries().length} cards mapped by category and shared concepts`;
   }
@@ -414,6 +568,7 @@ function renderStats() {
   const categoryCount = new Set(state.data.entries.map((entry) => entry.category).filter(Boolean)).size;
   els.entryCount.textContent = visible.length;
   els.linkCount.textContent = links.length;
+  els.candidateCount.textContent = (state.candidateData.candidates || []).length;
   els.topEntryCount.textContent = state.data.entries.length;
   els.topCategoryCount.textContent = categoryCount;
   els.topLinkCount.textContent = buildLinks(state.data.entries).length;
@@ -429,8 +584,10 @@ function renderStats() {
 
 function render() {
   state.data.entries = enrichEntries(state.data.entries);
+  state.candidateData.candidates = enrichEntries(state.candidateData.candidates || []);
   renderFilters();
   renderCards();
+  renderCandidates();
   renderStats();
   renderDetail();
   renderView();
@@ -507,6 +664,66 @@ function upsertEntry(event) {
   saveLocal();
   showSaveFeedback("Saved locally");
   render();
+}
+
+function candidateToEntry(candidate) {
+  const candidateEntry = { ...candidate };
+  delete candidateEntry.candidateMeta;
+  let id = candidateEntry.id.replace(/^candidate-/, "knowledge-");
+  if (!id || state.data.entries.some((entry) => entry.id === id)) {
+    id = `${slugify(candidateEntry.title)}-${Date.now()}`;
+  }
+  return {
+    ...candidateEntry,
+    id,
+    sourceName: candidateEntry.sourceName || "Review candidate",
+    accessedAt: new Date().toISOString().slice(0, 10),
+    verificationStatus: "needs-verification"
+  };
+}
+
+function removeCandidate(id) {
+  state.candidateData.candidates = (state.candidateData.candidates || []).filter((candidate) => candidate.id !== id);
+  saveCandidatesLocal();
+}
+
+function handleCandidateAction(action, id) {
+  const candidate = (state.candidateData.candidates || []).find((item) => item.id === id);
+  if (!candidate) return;
+
+  if (action === "approve") {
+    const entry = candidateToEntry(candidate);
+    state.data.entries.unshift(entry);
+    state.selectedId = entry.id;
+    removeCandidate(id);
+    saveLocal();
+    showSaveFeedback("Candidate approved locally");
+  } else if (action === "reject") {
+    removeCandidate(id);
+    showSaveFeedback("Candidate rejected locally");
+  } else if (action === "merge") {
+    const target = state.data.entries.find((entry) => (candidate.connections || []).includes(entry.id));
+    if (!target) {
+      showSaveFeedback("No linked card to merge");
+      return;
+    }
+    target.tags = uniqueList([...(target.tags || []), ...(candidate.tags || [])]);
+    target.concepts = uniqueList([...(target.concepts || []), ...(candidate.concepts || [])]);
+    target.principles = uniqueList([...(target.principles || []), ...(candidate.principles || [])]);
+    target.applications = uniqueList([...(target.applications || []), ...(candidate.applications || [])]);
+    target.connections = uniqueList([...(target.connections || []), ...(candidate.connections || []).filter((connection) => connection !== target.id)]);
+    state.selectedId = target.id;
+    removeCandidate(id);
+    saveLocal();
+    showSaveFeedback("Candidate merged locally");
+  }
+
+  state.graph.needsFit = true;
+  render();
+}
+
+function uniqueList(values) {
+  return [...new Set(values.filter(Boolean))];
 }
 
 function renderDetail() {
@@ -998,6 +1215,7 @@ function escapeHtml(value) {
 function handleFilterChange() {
   state.graph.needsFit = true;
   renderCards();
+  renderCandidates();
   renderStats();
   renderView();
 }
@@ -1030,6 +1248,11 @@ els.editToggleButton.addEventListener("click", () => {
 els.cardsViewButton.addEventListener("click", () => {
   state.view = "cards";
   history.replaceState(null, "", window.location.pathname + window.location.search);
+  renderView();
+});
+els.candidatesViewButton.addEventListener("click", () => {
+  state.view = "candidates";
+  history.replaceState(null, "", "#candidates");
   renderView();
 });
 els.backToCardsButton.addEventListener("click", () => {
@@ -1103,7 +1326,7 @@ els.fileInput.addEventListener("change", (event) => {
   if (file) importData(file);
 });
 window.addEventListener("hashchange", () => {
-  state.view = window.location.hash === "#graph" ? "graph" : "cards";
+  state.view = window.location.hash === "#graph" ? "graph" : window.location.hash === "#candidates" ? "candidates" : "cards";
   state.graph.needsFit = state.view === "graph";
   renderView();
 });
