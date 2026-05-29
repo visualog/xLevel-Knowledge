@@ -23,6 +23,7 @@ const state = {
   data: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), entries: [] },
   candidateData: { version: 1, updatedAt: new Date().toISOString().slice(0, 10), candidates: [] },
   reviewActions: loadReviewActions(),
+  writeBridge: { available: false, checked: false },
   selectedId: null,
   selectedTag: "",
   hoveredId: null,
@@ -149,6 +150,18 @@ async function loadData() {
 
   await loadCandidates();
   render();
+  detectWriteBridge();
+}
+
+async function detectWriteBridge() {
+  try {
+    const response = await fetch("/api/health", { cache: "no-store" });
+    const data = response.ok ? await response.json() : null;
+    state.writeBridge = { available: Boolean(data?.ok), checked: true };
+  } catch {
+    state.writeBridge = { available: false, checked: true };
+  }
+  renderReviewQueue();
 }
 
 async function loadCandidates() {
@@ -524,11 +537,16 @@ function renderScore(label, value) {
 
 function renderReviewQueue() {
   const count = state.reviewActions.length;
-  els.reviewQueueTitle.textContent = count ? `${count} review action${count === 1 ? "" : "s"} queued` : "No review actions queued";
-  els.reviewQueueSummary.textContent = count
-    ? "Export this queue and apply it with the script to update Markdown entries, candidates, and the rebuilt index."
-    : "Candidate actions in this static site stay local until exported and applied with the script.";
-  els.reviewQueueCommand.textContent = "node scripts/apply-candidates.mjs --review-file knowledge/data/review-actions.json";
+  const bridgeLabel = state.writeBridge.available ? "Local write bridge connected" : "Static export mode";
+  els.reviewQueueTitle.textContent = count ? `${bridgeLabel} · ${count} queued` : bridgeLabel;
+  els.reviewQueueSummary.textContent = state.writeBridge.available
+    ? "Candidate actions are applied directly to repository files through the local server. Export remains available as a fallback."
+    : count
+      ? "Export this queue and apply it with the script to update Markdown entries, candidates, and the rebuilt index."
+      : "Candidate actions in this static site stay local until exported and applied with the script.";
+  els.reviewQueueCommand.textContent = state.writeBridge.available
+    ? "node scripts/knowledge-server.mjs"
+    : "node scripts/apply-candidates.mjs --review-file knowledge/data/review-actions.json";
   els.exportReviewActionsButton.disabled = count === 0;
   els.clearReviewActionsButton.disabled = count === 0;
 }
@@ -717,9 +735,9 @@ function candidateToEntry(candidate) {
   };
 }
 
-function removeCandidate(id) {
+function removeCandidate(id, persist = true) {
   state.candidateData.candidates = (state.candidateData.candidates || []).filter((candidate) => candidate.id !== id);
-  saveCandidatesLocal();
+  if (persist) saveCandidatesLocal();
 }
 
 function queueReviewAction(action) {
@@ -733,35 +751,74 @@ function queueReviewAction(action) {
   saveReviewActionsLocal();
 }
 
-function handleCandidateAction(action, id) {
+async function applyReviewActionsWithBridge(actions) {
+  const response = await fetch("/api/apply-review-actions", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ actions })
+  });
+  const data = await response.json();
+  if (!response.ok || !data.ok) {
+    throw new Error(data.stderr || data.error || "Local write bridge failed");
+  }
+  return data;
+}
+
+function localMergeTarget(candidate) {
+  return state.data.entries.find((entry) => (candidate.connections || []).includes(entry.id));
+}
+
+async function refreshBundledData() {
+  localStorage.removeItem(KNOWLEDGE_STORAGE_KEY);
+  localStorage.removeItem(CANDIDATES_STORAGE_KEY);
+  await loadData();
+}
+
+async function handleCandidateAction(action, id) {
   const candidate = (state.candidateData.candidates || []).find((item) => item.id === id);
   if (!candidate) return;
+
+  const target = action === "merge" ? localMergeTarget(candidate) : null;
+  if (action === "merge" && !target) {
+    showSaveFeedback("No linked card to merge");
+    return;
+  }
+
+  const reviewAction = action === "merge" ? { action, candidateId: id, into: target.id } : { action, candidateId: id };
+
+  if (state.writeBridge.available) {
+    try {
+      await applyReviewActionsWithBridge([reviewAction]);
+      state.reviewActions = state.reviewActions.filter((item) => item.candidateId !== id);
+      saveReviewActionsLocal();
+      await refreshBundledData();
+      showSaveFeedback("Candidate applied to repository files");
+    } catch (error) {
+      showSaveFeedback(error.message);
+    }
+    return;
+  }
 
   if (action === "approve") {
     const entry = candidateToEntry(candidate);
     state.data.entries.unshift(entry);
     state.selectedId = entry.id;
-    queueReviewAction({ action: "approve", candidateId: id });
+    queueReviewAction(reviewAction);
     removeCandidate(id);
     saveLocal();
     showSaveFeedback("Candidate approved locally and queued for export");
   } else if (action === "reject") {
-    queueReviewAction({ action: "reject", candidateId: id });
+    queueReviewAction(reviewAction);
     removeCandidate(id);
     showSaveFeedback("Candidate rejected locally and queued for export");
   } else if (action === "merge") {
-    const target = state.data.entries.find((entry) => (candidate.connections || []).includes(entry.id));
-    if (!target) {
-      showSaveFeedback("No linked card to merge");
-      return;
-    }
     target.tags = uniqueList([...(target.tags || []), ...(candidate.tags || [])]);
     target.concepts = uniqueList([...(target.concepts || []), ...(candidate.concepts || [])]);
     target.principles = uniqueList([...(target.principles || []), ...(candidate.principles || [])]);
     target.applications = uniqueList([...(target.applications || []), ...(candidate.applications || [])]);
     target.connections = uniqueList([...(target.connections || []), ...(candidate.connections || []).filter((connection) => connection !== target.id)]);
     state.selectedId = target.id;
-    queueReviewAction({ action: "merge", candidateId: id, into: target.id });
+    queueReviewAction(reviewAction);
     removeCandidate(id);
     saveLocal();
     showSaveFeedback("Candidate merged locally and queued for export");
