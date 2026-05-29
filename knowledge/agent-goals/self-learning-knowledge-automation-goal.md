@@ -24,3 +24,12 @@ Phase 1 and the local Phase 2 bridge are implemented. Continue from the full goa
 - make the learning loop repeatable through `scripts/run-learning-loop.mjs`
 - verify source candidates can be exported or applied through the local bridge
 - keep all source handling copyright-safe and review-first
+
+Implemented source adapter inputs:
+
+```bash
+node scripts/collect-knowledge.mjs --source-file knowledge/data/source-seeds.example.json
+node scripts/collect-knowledge.mjs --feed-file knowledge/data/feed-seeds.example.xml
+node scripts/collect-knowledge.mjs --url-file knowledge/data/url-seeds.example.txt
+node scripts/collect-knowledge.mjs --url https://example.com/source
+```

@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 const DEFAULT_KNOWLEDGE_PATH = path.join(repoRoot, "knowledge/data/knowledge.json");
 const DEFAULT_CANDIDATES_PATH = path.join(repoRoot, "knowledge/data/candidates.json");
-const TODAY = new Date().toISOString().slice(0, 10);
+const TODAY = localIsoDate();
 
 const ADJACENT_TOPICS = {
   "브랜드 전략": ["브랜드 아키텍처", "포지셔닝 리서치", "브랜드 거버넌스", "브랜드 측정"],
@@ -34,6 +34,8 @@ function parseArgs(argv) {
     outPath: DEFAULT_CANDIDATES_PATH,
     sourceFile: "",
     feedFile: "",
+    urls: [],
+    urlFile: "",
     limit: 20,
     dryRun: false
   };
@@ -58,11 +60,28 @@ function parseArgs(argv) {
       const next = argv[index + 1] || "";
       args.feedFile = /^https?:\/\//.test(next) ? next : path.resolve(repoRoot, next);
       index += 1;
+    } else if (value === "--url") {
+      const next = argv[index + 1] || "";
+      args.urls.push(resolveSourceReference(next));
+      index += 1;
+    } else if (value === "--url-file") {
+      args.urlFile = path.resolve(repoRoot, argv[index + 1] || "");
+      index += 1;
     }
   }
 
   if (!Number.isFinite(args.limit) || args.limit < 1) args.limit = 20;
   return args;
+}
+
+function resolveSourceReference(value) {
+  if (/^https?:\/\//.test(value)) return value;
+  return path.resolve(repoRoot, value);
+}
+
+function localIsoDate(date = new Date()) {
+  const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60_000);
+  return localDate.toISOString().slice(0, 10);
 }
 
 async function readJson(filePath, fallback) {
@@ -225,6 +244,7 @@ function makeCandidate({ kind, title, category, tags, concepts, seedEntries, que
 function candidateFromSource(source, entries) {
   const category = source.category || "미분류";
   const title = source.title || source.sourceUrl || "Untitled source";
+  const sourceKindTag = source.candidateTag === false ? "" : source.candidateTag || "curated-source";
   const seedEntries = entries
     .filter((entry) => !category || entry.category === category)
     .slice(0, 5);
@@ -237,7 +257,7 @@ function candidateFromSource(source, entries) {
     publishedAt: source.publishedAt || "",
     accessedAt: TODAY,
     category,
-    tags: unique([...(source.tags || []), "curated-source"]).slice(0, 6),
+    tags: unique([...(source.tags || []), sourceKindTag]).slice(0, 6),
     summary:
       source.summary ||
       `${title} source metadata was added through a curated source file and needs source verification before durable use.`,
@@ -291,6 +311,40 @@ function stripHtml(value) {
   return decodeXml(value).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+function htmlTag(html, tag) {
+  const match = html.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, "i"));
+  return stripHtml(match?.[1] || "");
+}
+
+function htmlAttr(block, attr) {
+  const match = block.match(new RegExp(`\\s${attr}=["']([^"']+)["']`, "i"));
+  return decodeXml(match?.[1] || "");
+}
+
+function htmlMeta(html, names) {
+  const values = Array.isArray(names) ? names : [names];
+  for (const meta of html.matchAll(/<meta\b[^>]*>/gi)) {
+    const block = meta[0];
+    const key = htmlAttr(block, "name") || htmlAttr(block, "property") || htmlAttr(block, "itemprop");
+    if (values.some((value) => key.toLowerCase() === value.toLowerCase())) {
+      const content = htmlAttr(block, "content");
+      if (content) return stripHtml(content);
+    }
+  }
+  return "";
+}
+
+function htmlLink(html, rel) {
+  for (const link of html.matchAll(/<link\b[^>]*>/gi)) {
+    const block = link[0];
+    if (htmlAttr(block, "rel").toLowerCase() === rel.toLowerCase()) {
+      const href = htmlAttr(block, "href");
+      if (href) return href;
+    }
+  }
+  return "";
+}
+
 function parseFeedItems(feedXml) {
   const rssItems = [...feedXml.matchAll(/<item\b[\s\S]*?<\/item>/gi)].map((match) => {
     const block = match[0];
@@ -333,6 +387,69 @@ async function readTextSource(source) {
   return readFile(source, "utf8");
 }
 
+function sourceDisplay(source) {
+  if (/^https?:\/\//.test(source)) return source;
+  return path.relative(repoRoot, source);
+}
+
+function sourceHost(source) {
+  try {
+    return new URL(source).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+}
+
+function parseHtmlSource(html, source) {
+  const sourceUrl = htmlMeta(html, ["og:url", "twitter:url"]) || htmlLink(html, "canonical") || (/^https?:\/\//.test(source) ? source : "");
+  return {
+    title: htmlMeta(html, ["og:title", "twitter:title"]) || htmlTag(html, "title") || sourceUrl || sourceDisplay(source),
+    sourceUrl,
+    sourceName: htmlMeta(html, ["og:site_name", "application-name"]) || sourceHost(sourceUrl || source) || "Manual URL source",
+    author: htmlMeta(html, ["author", "article:author", "dc.creator"]),
+    publishedAt: normalizeDate(htmlMeta(html, ["article:published_time", "date", "dc.date", "pubdate"])),
+    summary: htmlMeta(html, ["description", "og:description", "twitter:description"])
+  };
+}
+
+async function readUrlList(urlFile) {
+  if (!urlFile) return [];
+  const text = await readFile(urlFile, "utf8");
+  return text
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith("#"))
+    .map(resolveSourceReference);
+}
+
+async function readUrlCandidates(urls, urlFile, entries, existingCandidates) {
+  const sources = unique([...(urls || []), ...(await readUrlList(urlFile))]);
+  if (!sources.length) return [];
+
+  const candidates = [];
+  for (const sourceRef of sources) {
+    const html = await readTextSource(sourceRef);
+    const item = parseHtmlSource(html, sourceRef);
+    const source = {
+      ...item,
+      category: inferCategoryFromSource(item),
+      tags: ["manual-url", "external-source"],
+      candidateTag: false,
+      concepts: ["manual source review", "source metadata"],
+      query: `${item.title || item.sourceUrl || sourceDisplay(sourceRef)} source review`,
+      reason: "Added from manual URL input for review-first ingestion.",
+      trustScore: /^https?:\/\//.test(item.sourceUrl || sourceRef) ? 0.62 : 0.5,
+      relevanceScore: 0.7
+    };
+    const candidate = candidateFromSource(source, entries);
+    candidate.candidateMeta.kind = "manual-url";
+    candidate.connections = linkCandidate(candidate, entries);
+    candidate.candidateMeta.duplicateScore = duplicateScore(candidate, entries, [...existingCandidates, ...candidates]);
+    candidates.push(candidate);
+  }
+  return candidates;
+}
+
 async function readFeedCandidates(feedFile, entries, existingCandidates) {
   if (!feedFile) return [];
   const feedXml = await readTextSource(feedFile);
@@ -343,6 +460,7 @@ async function readFeedCandidates(feedFile, entries, existingCandidates) {
       sourceName: feedTitle,
       category: inferCategoryFromSource(item),
       tags: ["feed-source", "external-source"],
+      candidateTag: false,
       concepts: ["feed discovery", "source review"],
       query: `${item.title || item.sourceUrl} source review`,
       reason: "Discovered from RSS/Atom feed metadata for review-first ingestion.",
@@ -500,8 +618,9 @@ async function main() {
   const existingCandidates = existing.candidates || [];
   const sourceCandidates = await readSourceCandidates(args.sourceFile, entries, existingCandidates);
   const feedCandidates = await readFeedCandidates(args.feedFile, entries, [...existingCandidates, ...sourceCandidates]);
-  const generatedCandidates = generateCandidates(entries, [...existingCandidates, ...sourceCandidates, ...feedCandidates]);
-  const candidates = [...sourceCandidates, ...feedCandidates, ...generatedCandidates]
+  const urlCandidates = await readUrlCandidates(args.urls, args.urlFile, entries, [...existingCandidates, ...sourceCandidates, ...feedCandidates]);
+  const generatedCandidates = generateCandidates(entries, [...existingCandidates, ...sourceCandidates, ...feedCandidates, ...urlCandidates]);
+  const candidates = [...sourceCandidates, ...feedCandidates, ...urlCandidates, ...generatedCandidates]
     .filter((candidate, index, list) => list.findIndex((item) => item.id === candidate.id) === index)
     .slice(0, args.limit);
   const output = {
@@ -511,8 +630,10 @@ async function main() {
       knowledgePath: path.relative(repoRoot, args.knowledgePath),
       sourceFile: args.sourceFile ? path.relative(repoRoot, args.sourceFile) : "",
       feedFile: args.feedFile ? (/^https?:\/\//.test(args.feedFile) ? args.feedFile : path.relative(repoRoot, args.feedFile)) : "",
+      urls: args.urls.map(sourceDisplay),
+      urlFile: args.urlFile ? path.relative(repoRoot, args.urlFile) : "",
       entryCount: entries.length,
-      mode: args.sourceFile || args.feedFile ? "source-adapter-review-first" : "deterministic-review-first"
+      mode: args.sourceFile || args.feedFile || args.urls.length || args.urlFile ? "source-adapter-review-first" : "deterministic-review-first"
     },
     candidates
   };

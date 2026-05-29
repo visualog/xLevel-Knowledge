@@ -1,0 +1,2 @@
+# One source reference per line. Local HTML files are useful for deterministic tests.
+knowledge/data/url-source.example.html

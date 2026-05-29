@@ -12,6 +12,8 @@ function parseArgs(argv) {
     limit: 20,
     sourceFile: "",
     feedFile: "",
+    urls: [],
+    urlFile: "",
     reviewFile: "",
     dryRun: false,
     skipBuild: false
@@ -31,6 +33,13 @@ function parseArgs(argv) {
     } else if (value === "--feed-file") {
       const next = argv[index + 1] || "";
       args.feedFile = /^https?:\/\//.test(next) ? next : path.resolve(repoRoot, next);
+      index += 1;
+    } else if (value === "--url") {
+      const next = argv[index + 1] || "";
+      args.urls.push(/^https?:\/\//.test(next) ? next : path.resolve(repoRoot, next));
+      index += 1;
+    } else if (value === "--url-file") {
+      args.urlFile = path.resolve(repoRoot, argv[index + 1] || "");
       index += 1;
     } else if (value === "--dry-run") {
       args.dryRun = true;
@@ -83,6 +92,8 @@ async function main() {
   const collectArgs = ["scripts/collect-knowledge.mjs", "--limit", String(args.limit)];
   if (args.sourceFile) collectArgs.push("--source-file", args.sourceFile);
   if (args.feedFile) collectArgs.push("--feed-file", args.feedFile);
+  for (const sourceUrl of args.urls) collectArgs.push("--url", sourceUrl);
+  if (args.urlFile) collectArgs.push("--url-file", args.urlFile);
   if (args.dryRun) collectArgs.push("--dry-run");
   steps.push(runNode(collectArgs));
 
@@ -101,6 +112,8 @@ async function main() {
     limit: args.limit,
     sourceFile: args.sourceFile ? path.relative(repoRoot, args.sourceFile) : "",
     feedFile: args.feedFile ? (/^https?:\/\//.test(args.feedFile) ? args.feedFile : path.relative(repoRoot, args.feedFile)) : "",
+    urls: args.urls.map((sourceUrl) => (/^https?:\/\//.test(sourceUrl) ? sourceUrl : path.relative(repoRoot, sourceUrl))),
+    urlFile: args.urlFile ? path.relative(repoRoot, args.urlFile) : "",
     reviewFile: args.reviewFile ? path.relative(repoRoot, args.reviewFile) : "",
     reviewActions: await readReviewActionCount(args.reviewFile),
     collect: parseJsonOutput(collectStep),

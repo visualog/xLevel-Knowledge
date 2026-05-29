@@ -9,7 +9,12 @@ const repoRoot = path.resolve(__dirname, "..");
 const candidatesPath = path.join(repoRoot, "knowledge/data/candidates.json");
 const rejectedPath = path.join(repoRoot, "knowledge/data/rejected-candidates.json");
 const entriesRoot = path.join(repoRoot, "knowledge/self-learning/entries");
-const today = new Date().toISOString().slice(0, 10);
+const today = localIsoDate();
+
+function localIsoDate(date = new Date()) {
+  const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60_000);
+  return localDate.toISOString().slice(0, 10);
+}
 
 function parseArgs(argv) {
   const args = {
