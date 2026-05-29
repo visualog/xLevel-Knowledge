@@ -30,10 +30,21 @@ The repository already has:
 
 Current limitations:
 
-- Candidate review actions are localStorage-based.
-- `Approve` does not yet write durable files.
-- Discovery is deterministic and placeholder-based, not real source discovery.
-- The system does not yet close the loop from candidate approval to Markdown entry, JSON index, and Git commit.
+- Static-site candidate review actions can still fall back to localStorage/export.
+- A local-only write bridge can apply exported review actions when the site is served by `scripts/knowledge-server.mjs`.
+- Durable apply flow exists for approve, reject, merge, and review-file workflows.
+- Discovery supports deterministic generation, curated JSON sources, and RSS/Atom feed metadata.
+- Live search/browser/API discovery is not yet fully automated.
+- Git commit and push remain explicit operator actions.
+
+Implemented command examples:
+
+```bash
+node scripts/collect-knowledge.mjs --dry-run --source-file knowledge/data/source-seeds.example.json --limit 5
+node scripts/collect-knowledge.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
+node scripts/run-learning-loop.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
+PORT=8091 node scripts/knowledge-server.mjs
+```
 
 ## Required Behavior
 
@@ -119,8 +130,8 @@ Add a source adapter architecture, but keep it simple.
 
 Initial adapters may include:
 
-- curated URL list input
-- RSS or feed input
+- curated URL list input: implemented with `--source-file`
+- RSS or feed input: implemented with `--feed-file`
 - manual URL input
 - search query output for human review
 - later: browser or search API integration

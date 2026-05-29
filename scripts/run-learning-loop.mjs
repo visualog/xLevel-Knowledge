@@ -11,6 +11,7 @@ function parseArgs(argv) {
   const args = {
     limit: 20,
     sourceFile: "",
+    feedFile: "",
     reviewFile: "",
     dryRun: false,
     skipBuild: false
@@ -26,6 +27,10 @@ function parseArgs(argv) {
       index += 1;
     } else if (value === "--source-file") {
       args.sourceFile = path.resolve(repoRoot, argv[index + 1] || "");
+      index += 1;
+    } else if (value === "--feed-file") {
+      const next = argv[index + 1] || "";
+      args.feedFile = /^https?:\/\//.test(next) ? next : path.resolve(repoRoot, next);
       index += 1;
     } else if (value === "--dry-run") {
       args.dryRun = true;
@@ -77,6 +82,7 @@ async function main() {
 
   const collectArgs = ["scripts/collect-knowledge.mjs", "--limit", String(args.limit)];
   if (args.sourceFile) collectArgs.push("--source-file", args.sourceFile);
+  if (args.feedFile) collectArgs.push("--feed-file", args.feedFile);
   if (args.dryRun) collectArgs.push("--dry-run");
   steps.push(runNode(collectArgs));
 
@@ -94,6 +100,7 @@ async function main() {
     dryRun: args.dryRun,
     limit: args.limit,
     sourceFile: args.sourceFile ? path.relative(repoRoot, args.sourceFile) : "",
+    feedFile: args.feedFile ? (/^https?:\/\//.test(args.feedFile) ? args.feedFile : path.relative(repoRoot, args.feedFile)) : "",
     reviewFile: args.reviewFile ? path.relative(repoRoot, args.reviewFile) : "",
     reviewActions: await readReviewActionCount(args.reviewFile),
     collect: parseJsonOutput(collectStep),

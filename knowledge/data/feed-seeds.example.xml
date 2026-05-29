@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>xLevel Example Feed</title>
+    <link>https://example.com/design-feed</link>
+    <description>Example feed metadata for review-first ingestion tests.</description>
+    <item>
+      <title>Design System Governance Patterns</title>
+      <link>https://example.com/design-system-governance-patterns</link>
+      <author>Example Design Team</author>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <description>Metadata-only seed about design system governance, contribution models, and component standards.</description>
+    </item>
+    <item>
+      <title>User Research Repository Practice</title>
+      <link>https://example.com/user-research-repository-practice</link>
+      <author>Example Research Team</author>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <description>Metadata-only seed about UX research repositories, insight reuse, and source-linked evidence.</description>
+    </item>
+  </channel>
+</rss>

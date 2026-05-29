@@ -15,11 +15,12 @@ Full goal document:
 5. Search existing `knowledge/`, `scripts/`, and `knowledge/site/` before editing.
 6. Follow the Fabric note workflow for planning notes, screenshots, completion reports, and verification.
 
-## First Implementation Target
+## Current Implementation Target
 
-Start with Phase 1 from the full goal:
+Phase 1 and the local Phase 2 bridge are implemented. Continue from the full goal with Phase 3 and Phase 4:
 
-- create `scripts/apply-candidates.mjs`
-- support approve, reject, merge, and review-file workflows
-- make approved candidates durable by updating Markdown entries and rebuilt JSON data
+- add source adapters that discover external source opportunities without storing article bodies
+- keep all discovered items review-first
+- make the learning loop repeatable through `scripts/run-learning-loop.mjs`
+- verify source candidates can be exported or applied through the local bridge
 - keep all source handling copyright-safe and review-first

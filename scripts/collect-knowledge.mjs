@@ -33,6 +33,7 @@ function parseArgs(argv) {
     knowledgePath: DEFAULT_KNOWLEDGE_PATH,
     outPath: DEFAULT_CANDIDATES_PATH,
     sourceFile: "",
+    feedFile: "",
     limit: 20,
     dryRun: false
   };
@@ -52,6 +53,10 @@ function parseArgs(argv) {
       index += 1;
     } else if (value === "--source-file") {
       args.sourceFile = path.resolve(repoRoot, argv[index + 1] || "");
+      index += 1;
+    } else if (value === "--feed-file") {
+      const next = argv[index + 1] || "";
+      args.feedFile = /^https?:\/\//.test(next) ? next : path.resolve(repoRoot, next);
       index += 1;
     }
   }
@@ -261,6 +266,107 @@ function candidateFromSource(source, entries) {
   };
 }
 
+function decodeXml(value) {
+  return String(value || "")
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .trim();
+}
+
+function xmlTag(block, tag) {
+  const match = block.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${tag}>`, "i"));
+  return decodeXml(match?.[1] || "");
+}
+
+function xmlAttr(block, tag, attr) {
+  const match = block.match(new RegExp(`<${tag}[^>]*\\s${attr}=["']([^"']+)["'][^>]*>`, "i"));
+  return decodeXml(match?.[1] || "");
+}
+
+function stripHtml(value) {
+  return decodeXml(value).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function parseFeedItems(feedXml) {
+  const rssItems = [...feedXml.matchAll(/<item\b[\s\S]*?<\/item>/gi)].map((match) => {
+    const block = match[0];
+    return {
+      title: xmlTag(block, "title"),
+      sourceUrl: xmlTag(block, "link") || xmlTag(block, "guid"),
+      author: xmlTag(block, "author") || xmlTag(block, "dc:creator"),
+      publishedAt: normalizeDate(xmlTag(block, "pubDate") || xmlTag(block, "dc:date")),
+      summary: stripHtml(xmlTag(block, "description"))
+    };
+  });
+
+  const atomItems = [...feedXml.matchAll(/<entry\b[\s\S]*?<\/entry>/gi)].map((match) => {
+    const block = match[0];
+    return {
+      title: xmlTag(block, "title"),
+      sourceUrl: xmlAttr(block, "link", "href") || xmlTag(block, "id"),
+      author: xmlTag(xmlTag(block, "author"), "name"),
+      publishedAt: normalizeDate(xmlTag(block, "published") || xmlTag(block, "updated")),
+      summary: stripHtml(xmlTag(block, "summary") || xmlTag(block, "content"))
+    };
+  });
+
+  return [...rssItems, ...atomItems].filter((item) => item.title || item.sourceUrl);
+}
+
+function normalizeDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  return Number.isNaN(date.valueOf()) ? String(value).slice(0, 10) : date.toISOString().slice(0, 10);
+}
+
+async function readTextSource(source) {
+  if (!source) return "";
+  if (/^https?:\/\//.test(source)) {
+    const response = await fetch(source);
+    if (!response.ok) throw new Error(`Could not fetch feed: ${source}`);
+    return response.text();
+  }
+  return readFile(source, "utf8");
+}
+
+async function readFeedCandidates(feedFile, entries, existingCandidates) {
+  if (!feedFile) return [];
+  const feedXml = await readTextSource(feedFile);
+  const feedTitle = xmlTag(feedXml, "title") || "Feed source";
+  return parseFeedItems(feedXml).map((item) => {
+    const source = {
+      ...item,
+      sourceName: feedTitle,
+      category: inferCategoryFromSource(item),
+      tags: ["feed-source", "external-source"],
+      concepts: ["feed discovery", "source review"],
+      query: `${item.title || item.sourceUrl} source review`,
+      reason: "Discovered from RSS/Atom feed metadata for review-first ingestion.",
+      trustScore: 0.56,
+      relevanceScore: 0.68
+    };
+    const candidate = candidateFromSource(source, entries);
+    candidate.candidateMeta.kind = "feed-source";
+    candidate.connections = linkCandidate(candidate, entries);
+    candidate.candidateMeta.duplicateScore = duplicateScore(candidate, entries, existingCandidates);
+    return candidate;
+  });
+}
+
+function inferCategoryFromSource(source) {
+  const text = normalizeText([source.title, source.summary].join(" "));
+  if (/design system|token|component|디자인 시스템|컴포넌트/.test(text)) return "디자인 시스템";
+  if (/brand|branding|브랜드|identity/.test(text)) return "브랜드 전략";
+  if (/ux|research|user|사용자|리서치/.test(text)) return "UX 디자인";
+  if (/ui|interface|layout|인터페이스|레이아웃/.test(text)) return "UI 디자인";
+  if (/content|writing|copy|콘텐츠|카피/.test(text)) return "콘텐츠 전략";
+  return "디자인 프로세스";
+}
+
 async function readSourceCandidates(sourceFile, entries, existingCandidates) {
   if (!sourceFile) return [];
   const sourceData = await readJson(sourceFile, { sources: [] });
@@ -393,8 +499,9 @@ async function main() {
   const entries = knowledge.entries || [];
   const existingCandidates = existing.candidates || [];
   const sourceCandidates = await readSourceCandidates(args.sourceFile, entries, existingCandidates);
-  const generatedCandidates = generateCandidates(entries, [...existingCandidates, ...sourceCandidates]);
-  const candidates = [...sourceCandidates, ...generatedCandidates]
+  const feedCandidates = await readFeedCandidates(args.feedFile, entries, [...existingCandidates, ...sourceCandidates]);
+  const generatedCandidates = generateCandidates(entries, [...existingCandidates, ...sourceCandidates, ...feedCandidates]);
+  const candidates = [...sourceCandidates, ...feedCandidates, ...generatedCandidates]
     .filter((candidate, index, list) => list.findIndex((item) => item.id === candidate.id) === index)
     .slice(0, args.limit);
   const output = {
@@ -403,8 +510,9 @@ async function main() {
     generatedFrom: {
       knowledgePath: path.relative(repoRoot, args.knowledgePath),
       sourceFile: args.sourceFile ? path.relative(repoRoot, args.sourceFile) : "",
+      feedFile: args.feedFile ? (/^https?:\/\//.test(args.feedFile) ? args.feedFile : path.relative(repoRoot, args.feedFile)) : "",
       entryCount: entries.length,
-      mode: args.sourceFile ? "curated-source-review-first" : "deterministic-review-first"
+      mode: args.sourceFile || args.feedFile ? "source-adapter-review-first" : "deterministic-review-first"
     },
     candidates
   };
