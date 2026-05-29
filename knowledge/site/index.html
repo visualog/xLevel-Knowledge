@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>xLevel Knowledge</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">xLevel Knowledge</p>
+        <h1>지식 그래프</h1>
+        <p class="topbar__summary">여러 출처의 학습 데이터를 분류하고 연결해 프로젝트 판단 기준으로 재사용합니다.</p>
+      </div>
+      <div class="topbar__stats" aria-label="Knowledge status">
+        <div class="metric">
+          <span id="topEntryCount">0</span>
+          <small>Cards</small>
+        </div>
+        <div class="metric">
+          <span id="topCategoryCount">0</span>
+          <small>Categories</small>
+        </div>
+        <div class="metric">
+          <span id="topLinkCount">0</span>
+          <small>Links</small>
+        </div>
+      </div>
+      <div class="topbar__actions">
+        <button class="button button--ghost" id="importButton" type="button">Import</button>
+        <button class="button" id="exportButton" type="button">Export JSON</button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <aside class="sidebar" aria-label="Knowledge filters">
+        <section class="panel">
+          <label class="field">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="concept, tag, title" />
+          </label>
+          <label class="field">
+            <span>Category</span>
+            <select id="categoryFilter">
+              <option value="">All categories</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="statusFilter">
+              <option value="">All statuses</option>
+              <option value="verified">Verified</option>
+              <option value="needs-verification">Needs verification</option>
+              <option value="inaccessible">Inaccessible</option>
+            </select>
+          </label>
+          <div class="filter-group">
+            <span class="field-label">Tags</span>
+            <div class="chip-list" id="tagFilters" aria-label="Tag filters"></div>
+          </div>
+        </section>
+
+        <section class="panel panel--compact">
+          <p class="stat-label">Entries</p>
+          <p class="stat" id="entryCount">0</p>
+          <p class="stat-label">Links</p>
+          <p class="stat" id="linkCount">0</p>
+          <p class="stat-label">Updated</p>
+          <p class="stat-date" id="updatedAt">-</p>
+          <p class="stat-note" id="filterSummary">All knowledge visible</p>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div class="toolbar">
+          <div>
+            <h2 id="workspaceTitle">Knowledge Cards</h2>
+            <p id="resultSummary">No entries loaded.</p>
+          </div>
+          <div class="toolbar__actions">
+            <div class="segmented" aria-label="View mode">
+              <button class="segmented__button is-active" id="cardsViewButton" type="button">Cards</button>
+              <button class="segmented__button" id="graphViewButton" type="button">Graph</button>
+            </div>
+            <button class="button button--secondary" id="newEntryButton" type="button">New Card</button>
+          </div>
+        </div>
+
+        <section class="cards" id="cards" aria-live="polite"></section>
+
+        <section class="graph is-hidden" id="graphPanel" aria-label="Knowledge graph">
+          <div class="graph__bar">
+            <div class="graph__identity">
+              <button class="button button--secondary" id="backToCardsButton" type="button">Cards</button>
+              <div>
+                <p class="eyebrow">Canvas</p>
+                <h2>Knowledge Graph</h2>
+                <p id="graphSummary">Drag to pan. Wheel to zoom. Select a node to inspect.</p>
+              </div>
+            </div>
+            <div class="graph__actions">
+              <input id="graphSearchInput" class="graph__search" type="search" placeholder="Search graph" />
+              <select id="graphModeSelect" aria-label="Graph view mode">
+                <option value="overview">Overview</option>
+                <option value="cluster">Cluster</option>
+                <option value="local">Local Focus</option>
+                <option value="source">Source</option>
+                <option value="concept">Concept</option>
+                <option value="timeline">Timeline</option>
+              </select>
+              <button class="button button--secondary" id="resetGraphButton" type="button">Reset</button>
+              <button class="button button--secondary" id="resetLayoutButton" type="button">Reset layout</button>
+              <button class="button button--secondary" id="fitGraphButton" type="button">Fit</button>
+            </div>
+          </div>
+          <svg id="graphCanvas" class="graph__canvas" role="img" aria-label="Organic knowledge node canvas">
+            <g id="graphViewport"></g>
+          </svg>
+          <div class="graph-empty is-hidden" id="graphEmpty">
+            <strong>Select a node for Local Focus</strong>
+            <span>Local Focus shows the selected card and its direct neighbors.</span>
+          </div>
+          <div class="graph-legend" id="graphLegend" aria-label="Graph category legend"></div>
+          <div class="graph__status">
+            <label class="field graph__density">
+              <span>Density</span>
+              <input id="densityRange" type="range" min="40" max="280" step="20" value="120" />
+            </label>
+            <span id="zoomLabel">100%</span>
+          </div>
+          <div class="graph-preview is-hidden" id="graphPreview" role="status"></div>
+        </section>
+      </section>
+
+      <aside class="editor" aria-label="Knowledge editor">
+        <section class="panel detail" id="detailPanel">
+          <div class="editor__header">
+            <div>
+              <p class="eyebrow">Selected card</p>
+              <h2 id="detailTitle">선택된 카드가 없습니다</h2>
+            </div>
+            <button class="button button--secondary inspector-close" id="closeInspectorButton" type="button">Close</button>
+            <button class="button button--secondary" id="editToggleButton" type="button">Edit</button>
+          </div>
+          <p class="detail__summary" id="detailSummary">카드나 그래프 노드를 선택하면 개념, 원칙, 연결 항목을 여기에서 확인할 수 있습니다.</p>
+          <dl class="detail__meta" id="detailMeta"></dl>
+          <div class="detail-section">
+            <h3>Concepts</h3>
+            <div class="pill-list" id="detailConcepts"></div>
+          </div>
+          <div class="detail-section">
+            <h3>Principles</h3>
+            <ul id="detailPrinciples"></ul>
+          </div>
+          <div class="detail-section">
+            <h3>Applications</h3>
+            <ul id="detailApplications"></ul>
+          </div>
+          <div class="detail-section">
+            <h3>Connections</h3>
+            <div class="connection-list" id="detailConnections"></div>
+          </div>
+          <p class="save-feedback" id="saveFeedback" aria-live="polite"></p>
+        </section>
+
+        <form id="entryForm" class="panel editor__form is-collapsed">
+          <div class="editor__header">
+            <h2>Card Editor</h2>
+            <button class="button" type="submit">Save</button>
+          </div>
+
+          <input id="entryId" type="hidden" />
+
+          <label class="field">
+            <span>Title</span>
+            <input id="title" required />
+          </label>
+          <label class="field">
+            <span>Source URL</span>
+            <input id="sourceUrl" type="url" />
+          </label>
+          <div class="field-grid">
+            <label class="field">
+              <span>Author</span>
+              <input id="author" />
+            </label>
+            <label class="field">
+              <span>Category</span>
+              <input id="category" />
+            </label>
+          </div>
+          <div class="field-grid">
+            <label class="field">
+              <span>Published</span>
+              <input id="publishedAt" type="date" />
+            </label>
+            <label class="field">
+              <span>Status</span>
+              <select id="verificationStatus">
+                <option value="needs-verification">Needs verification</option>
+                <option value="verified">Verified</option>
+                <option value="inaccessible">Inaccessible</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Tags</span>
+            <input id="tags" placeholder="comma separated" />
+          </label>
+          <label class="field">
+            <span>Concepts</span>
+            <textarea id="concepts" rows="4" placeholder="one per line"></textarea>
+          </label>
+          <label class="field">
+            <span>Summary</span>
+            <textarea id="summary" rows="4"></textarea>
+          </label>
+          <label class="field">
+            <span>Practical Principles</span>
+            <textarea id="principles" rows="5" placeholder="one per line"></textarea>
+          </label>
+          <label class="field">
+            <span>Applications</span>
+            <textarea id="applications" rows="4" placeholder="one per line"></textarea>
+          </label>
+        </form>
+      </aside>
+    </main>
+
+    <input id="fileInput" type="file" accept="application/json" hidden />
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,3218 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-29",
+  "entries": [
+    {
+      "id": "plusx-35-플엑-익힘책-px-team-편",
+      "title": "플엑 익힘책_PX Team 편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/35",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2019-10-01",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "PX"
+      ],
+      "summary": "플엑 익힘책_PX Team 편은 O sunbae / PX 디자이너 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "브랜드 본질",
+        "직원 경험",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-57-패션에-대한-플러스엑스의-해석-fix-nothing",
+        "plusx-63-플러스엑스가-만든-두-번째-사원증-듀얼프레임-제작기",
+        "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+        "plusx-87-new-컬러로-돌아온-듀얼프레임",
+        "plusx-94-일잘러를-위한-2023년-캘린더"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 35,
+        "subtitle": "O sunbae / PX 디자이너",
+        "readSeconds": 210,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-37-플엑-익힘책-mx-team-편",
+      "title": "플엑 익힘책_MX Team 편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/37",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2019-11-04",
+      "accessedAt": "2026-05-29",
+      "category": "콘텐츠 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "MX",
+        "조직문화"
+      ],
+      "summary": "플엑 익힘책_MX Team 편은 김&장 / MX COPYWRITER&CONTENTS DESIGNER 맥락에서 콘텐츠 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "콘텐츠 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "직원 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 메시지와 콘텐츠 포맷 설계",
+        "조직 내부 지식 공유 콘텐츠 작성"
+      ],
+      "connections": [
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편",
+        "plusx-55-플엑익힘책-ex-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 37,
+        "subtitle": "김&장 / MX COPYWRITER&CONTENTS DESIGNER",
+        "readSeconds": 249,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-38-플엑-익힘책-dx-team-편",
+      "title": "플엑 익힘책_DX Team 편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/38",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2019-12-06",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "플엑 익힘책_DX Team 편은 데브숩 / Developer 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "디자인과 개발 협업"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편",
+        "plusx-51-디자인회사의-개발-이야기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 38,
+        "subtitle": "데브숩 / Developer",
+        "readSeconds": 142,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-40-플엑-익힘책-bx-team편",
+      "title": "플엑 익힘책_BX Team편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/40",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-01-13",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "조직문화"
+      ],
+      "summary": "플엑 익힘책_BX Team편은 강아지똥/BX 디자이너 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편",
+        "plusx-55-플엑익힘책-ex-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 40,
+        "subtitle": "강아지똥/BX 디자이너",
+        "readSeconds": 379,
+        "commentCount": 3
+      }
+    },
+    {
+      "id": "plusx-48-플엑-익힘책-ix-team편",
+      "title": "플엑 익힘책_IX Team편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/48",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-01-31",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "플엑 익힘책_IX Team편은 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "브랜드 전략 컨설팅"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-50-플엑-익힘책-ux-team-편",
+        "plusx-55-플엑익힘책-ex-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 48,
+        "subtitle": "",
+        "readSeconds": 333,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-50-플엑-익힘책-ux-team-편",
+      "title": "플엑 익힘책_UX Team 편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/50",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-04-07",
+      "accessedAt": "2026-05-29",
+      "category": "UX 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "UX",
+        "조직문화"
+      ],
+      "summary": "플엑 익힘책_UX Team 편은 Adrisett / UX designer 맥락에서 UX 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UX 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "사용자 경험 설계",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사용자의 문제와 맥락을 먼저 구조화한 뒤 화면이나 기능을 정의한다.",
+        "논리와 근거가 필요한 결정은 리서치, 사례, 데이터로 보강한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "서비스 구조 설계와 리서치 계획",
+        "사용자 여정과 기능 우선순위 판단"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-55-플엑익힘책-ex-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 50,
+        "subtitle": "Adrisett / UX designer",
+        "readSeconds": 375,
+        "commentCount": 3
+      }
+    },
+    {
+      "id": "plusx-51-디자인회사의-개발-이야기",
+      "title": "디자인회사의 개발 이야기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/51",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-05-29",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "DX",
+        "리서치"
+      ],
+      "summary": "디자인회사의 개발 이야기은 첫 번째 人(in)spiration | DX 김기현 이사님 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업",
+        "리서치 기반 판단"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-56-플엑익힘책-ui-team편",
+        "plusx-61-그룹웨어-직접-만들어봤습니다",
+        "plusx-72-생동적인-디자인을-위한-크리에이티브-코딩",
+        "plusx-88-가상공간에서의-쇼핑을-디자인하다-무신사-vr-room"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 51,
+        "subtitle": "첫 번째 人(in)spiration | DX 김기현 이사님",
+        "readSeconds": 380,
+        "commentCount": 2
+      }
+    },
+    {
+      "id": "plusx-55-플엑익힘책-ex-team-편",
+      "title": "플엑익힘책_EX Team 편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/55",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-06-11",
+      "accessedAt": "2026-05-29",
+      "category": "조직 문화",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "플엑익힘책_EX Team 편은 조직 문화 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "조직 문화",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "직원 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "팀의 역할은 산출물뿐 아니라 구성원이 몰입할 수 있는 환경까지 포함한다.",
+        "조직 운영 데이터와 직원 경험은 크리에이티브 품질을 뒷받침하는 기반이다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "팀 소개, 채용, 온보딩, 일하는 방식 정리",
+        "크리에이티브 조직 운영 정책 설계"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 55,
+        "subtitle": "",
+        "readSeconds": 382,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-56-플엑익힘책-ui-team편",
+      "title": "플엑익힘책_UI Team편",
+      "sourceUrl": "https://brunch.co.kr/@plusx/56",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-07-10",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "리서치",
+        "조직문화"
+      ],
+      "summary": "플엑익힘책_UI Team편은 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "팀 역할 정의",
+        "인터페이스 구체화",
+        "리서치 기반 판단"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 56,
+        "subtitle": "",
+        "readSeconds": 373,
+        "commentCount": 2
+      }
+    },
+    {
+      "id": "plusx-57-패션에-대한-플러스엑스의-해석-fix-nothing",
+      "title": "패션에 대한 플러스엑스의 해석, FIX NOTHING",
+      "sourceUrl": "https://brunch.co.kr/@plusx/57",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-07-13",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "PX"
+      ],
+      "summary": "패션에 대한 플러스엑스의 해석, FIX NOTHING은 두 번째 人(in)spiration | PX 호정/채아 디자이너님 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 전략 컨설팅"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-35-플엑-익힘책-px-team-편",
+        "plusx-63-플러스엑스가-만든-두-번째-사원증-듀얼프레임-제작기",
+        "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+        "plusx-87-new-컬러로-돌아온-듀얼프레임",
+        "plusx-94-일잘러를-위한-2023년-캘린더"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 57,
+        "subtitle": "두 번째 人(in)spiration | PX 호정/채아 디자이너님",
+        "readSeconds": 327,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-61-그룹웨어-직접-만들어봤습니다",
+      "title": "그룹웨어, 직접 만들어봤습니다",
+      "sourceUrl": "https://brunch.co.kr/@plusx/61",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2020-08-13",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "DX",
+        "EX",
+        "조직문화"
+      ],
+      "summary": "그룹웨어, 직접 만들어봤습니다은 세 번째 人(in)spiration | DX팀 & EX팀 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 61,
+        "subtitle": "세 번째 人(in)spiration  |  DX팀 & EX팀",
+        "readSeconds": 533,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-63-플러스엑스가-만든-두-번째-사원증-듀얼프레임-제작기",
+      "title": "플러스엑스가 만든 두 번째 사원증 '듀얼프레임' 제작기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/63",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2021-06-10",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "플러스엑스가 만든 두 번째 사원증 '듀얼프레임' 제작기은 네 번째人(in)spiration|듀얼프레임특공대 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-35-플엑-익힘책-px-team-편",
+        "plusx-57-패션에-대한-플러스엑스의-해석-fix-nothing",
+        "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+        "plusx-87-new-컬러로-돌아온-듀얼프레임",
+        "plusx-94-일잘러를-위한-2023년-캘린더"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 63,
+        "subtitle": "네 번째人(in)spiration|듀얼프레임특공대",
+        "readSeconds": 387,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+      "title": "브랜드와 소비자를 이어주는 다리를 짓는 사람들",
+      "sourceUrl": "https://brunch.co.kr/@plusx/68",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2021-08-09",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "조직문화"
+      ],
+      "summary": "브랜드와 소비자를 이어주는 다리를 짓는 사람들은 다섯 번째 人(in)spiration | BX팀 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 68,
+        "subtitle": "다섯 번째 人(in)spiration | BX팀",
+        "readSeconds": 402,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-72-생동적인-디자인을-위한-크리에이티브-코딩",
+      "title": "생동적인 디자인을 위한 크리에이티브 코딩",
+      "sourceUrl": "https://brunch.co.kr/@plusx/72",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2021-09-08",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "DX"
+      ],
+      "summary": "생동적인 디자인을 위한 크리에이티브 코딩은 여섯 번째人(in)spiration| DX Faris 책임님 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-51-디자인회사의-개발-이야기",
+        "plusx-61-그룹웨어-직접-만들어봤습니다",
+        "plusx-88-가상공간에서의-쇼핑을-디자인하다-무신사-vr-room",
+        "plusx-98-영감의-원천이-되는-코딩"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 72,
+        "subtitle": "여섯 번째人(in)spiration|  DX Faris 책임님",
+        "readSeconds": 316,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-74-새로운-대표들이-꿈꾸는-플러스엑스",
+      "title": "새로운 대표들이 꿈꾸는 플러스엑스",
+      "sourceUrl": "https://brunch.co.kr/@plusx/74",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2021-11-24",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "새로운 대표들이 꿈꾸는 플러스엑스은 플러스엑스의 유상원, 이재훈, 이효진 공동 대표를 만났습니다. 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-56-플엑익힘책-ui-team편",
+        "plusx-77-디자인-회사의-ui-ux-디자이너",
+        "plusx-92-뉴-미디어-환경에-맞는-iptv-ux-ui-디자인",
+        "plusx-97-빠르고-쉬운-탐색-카카오페이지-ux-ui-디자인",
+        "plusx-108-스토리보드-파워포인트에서-피그마로-이사합니다"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 74,
+        "subtitle": "플러스엑스의 유상원, 이재훈, 이효진 공동 대표를 만났습니다.",
+        "readSeconds": 504,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+      "title": "플러스엑스가 시도하는 메타버스 시대를 위한 새로운 경험",
+      "sourceUrl": "https://brunch.co.kr/@plusx/75",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2021-12-20",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "플러스엑스가 시도하는 메타버스 시대를 위한 새로운 경험은 Plus X Showroom, Virtual Showroom 제작기 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기",
+        "plusx-91-오감으로-경험하는-요리-아카이빗-브랜딩-디자인"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 75,
+        "subtitle": "Plus X Showroom, Virtual Showroom 제작기",
+        "readSeconds": 587,
+        "commentCount": 2
+      }
+    },
+    {
+      "id": "plusx-77-디자인-회사의-ui-ux-디자이너",
+      "title": "디자인 회사의 UI & UX 디자이너",
+      "sourceUrl": "https://brunch.co.kr/@plusx/77",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-01-13",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "UX",
+        "UI",
+        "조직문화"
+      ],
+      "summary": "디자인 회사의 UI & UX 디자이너은 아홉 번째 人(in)spiration | UI & UX 팀 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "사용자 경험 설계",
+        "인터페이스 구체화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 77,
+        "subtitle": "아홉 번째 人(in)spiration | UI & UX 팀",
+        "readSeconds": 433,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기",
+      "title": "같은 듯 다른, 두 기업의 통합 브랜드 디자인하기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/78",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-01-25",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "조직문화"
+      ],
+      "summary": "같은 듯 다른, 두 기업의 통합 브랜드 디자인하기은 열 번째 人(in)spiration | BX팀 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 78,
+        "subtitle": "열 번째 人(in)spiration | BX팀",
+        "readSeconds": 430,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-81-요즘-어떤-툴로-작업하세요",
+      "title": "요즘 어떤 툴로 작업하세요?",
+      "sourceUrl": "https://brunch.co.kr/@plusx/81",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-03-21",
+      "accessedAt": "2026-05-29",
+      "category": "조직 문화",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "요즘 어떤 툴로 작업하세요?은 플러스엑스 멤버들의 툴 사용기 맥락에서 조직 문화 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "조직 문화",
+        "출처 기반 학습",
+        "실무 지식화",
+        "작업 도구"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "팀의 역할은 산출물뿐 아니라 구성원이 몰입할 수 있는 환경까지 포함한다.",
+        "조직 운영 데이터와 직원 경험은 크리에이티브 품질을 뒷받침하는 기반이다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "팀 소개, 채용, 온보딩, 일하는 방식 정리",
+        "크리에이티브 조직 운영 정책 설계"
+      ],
+      "connections": [
+        "plusx-55-플엑익힘책-ex-team-편",
+        "plusx-83-드디어-플러스엑스-멤버가-되었습니다",
+        "plusx-112-플러스엑스-일과-삶의-균형을-위한-디자인",
+        "plusx-127-조율하는-리더십-명확함이-곧-배려입니다",
+        "plusx-134-6명의-현업-디자이너가-말하는-그래픽-디자인의-확장"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 81,
+        "subtitle": "플러스엑스 멤버들의 툴 사용기",
+        "readSeconds": 599,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-83-드디어-플러스엑스-멤버가-되었습니다",
+      "title": "드디어 플러스엑스 멤버가 되었습니다.",
+      "sourceUrl": "https://brunch.co.kr/@plusx/83",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-05-04",
+      "accessedAt": "2026-05-29",
+      "category": "조직 문화",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "EX"
+      ],
+      "summary": "드디어 플러스엑스 멤버가 되었습니다.은 플러스엑스 신입 멤버들의 입사 성공기 맥락에서 조직 문화 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "조직 문화",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "팀의 역할은 산출물뿐 아니라 구성원이 몰입할 수 있는 환경까지 포함한다.",
+        "조직 운영 데이터와 직원 경험은 크리에이티브 품질을 뒷받침하는 기반이다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "팀 소개, 채용, 온보딩, 일하는 방식 정리",
+        "크리에이티브 조직 운영 정책 설계"
+      ],
+      "connections": [
+        "plusx-55-플엑익힘책-ex-team-편",
+        "plusx-61-그룹웨어-직접-만들어봤습니다",
+        "plusx-81-요즘-어떤-툴로-작업하세요",
+        "plusx-112-플러스엑스-일과-삶의-균형을-위한-디자인",
+        "plusx-127-조율하는-리더십-명확함이-곧-배려입니다"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 83,
+        "subtitle": "플러스엑스 신입 멤버들의 입사 성공기",
+        "readSeconds": 664,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+      "title": "플러스엑스 오브젝트 리브랜딩 이야기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/86",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-06-16",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "PX",
+        "조직문화"
+      ],
+      "summary": "플러스엑스 오브젝트 리브랜딩 이야기은 열두 번째 人(in)spiration | CX팀 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-35-플엑-익힘책-px-team-편",
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 86,
+        "subtitle": "열두 번째 人(in)spiration | CX팀",
+        "readSeconds": 626,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-87-new-컬러로-돌아온-듀얼프레임",
+      "title": "NEW 컬러로 돌아온 듀얼프레임",
+      "sourceUrl": "https://brunch.co.kr/@plusx/87",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-06-30",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "PX"
+      ],
+      "summary": "NEW 컬러로 돌아온 듀얼프레임은 플러스엑스 오브젝트의 1년 만의 신제품 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-35-플엑-익힘책-px-team-편",
+        "plusx-57-패션에-대한-플러스엑스의-해석-fix-nothing",
+        "plusx-63-플러스엑스가-만든-두-번째-사원증-듀얼프레임-제작기",
+        "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+        "plusx-94-일잘러를-위한-2023년-캘린더"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 87,
+        "subtitle": "플러스엑스 오브젝트의 1년 만의 신제품",
+        "readSeconds": 291,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-88-가상공간에서의-쇼핑을-디자인하다-무신사-vr-room",
+      "title": "가상공간에서의 쇼핑을 디자인하다, 무신사 VR Room",
+      "sourceUrl": "https://brunch.co.kr/@plusx/88",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-07-28",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "DX",
+        "조직문화"
+      ],
+      "summary": "가상공간에서의 쇼핑을 디자인하다, 무신사 VR Room은 열세 번째 人(in)spiration | BX & DX팀 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 88,
+        "subtitle": "열세 번째 人(in)spiration | BX & DX팀",
+        "readSeconds": 387,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-90-한-편의-이야기같은-포트폴리오-만들기",
+      "title": "한 편의 이야기같은 포트폴리오 만들기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/90",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-08-31",
+      "accessedAt": "2026-05-29",
+      "category": "콘텐츠 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "한 편의 이야기같은 포트폴리오 만들기은 플러스엑스의 포트폴리오 제작 노하우 맥락에서 콘텐츠 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "콘텐츠 전략",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 메시지와 콘텐츠 포맷 설계",
+        "조직 내부 지식 공유 콘텐츠 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 90,
+        "subtitle": "플러스엑스의 포트폴리오 제작 노하우",
+        "readSeconds": 435,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-91-오감으로-경험하는-요리-아카이빗-브랜딩-디자인",
+      "title": "오감으로 경험하는 요리, 아카이빗 브랜딩 디자인",
+      "sourceUrl": "https://brunch.co.kr/@plusx/91",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-09-28",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "조직문화"
+      ],
+      "summary": "오감으로 경험하는 요리, 아카이빗 브랜딩 디자인은 열다섯 번째 人(in)spiration | BX팀 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 91,
+        "subtitle": "열다섯 번째 人(in)spiration | BX팀",
+        "readSeconds": 437,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-92-뉴-미디어-환경에-맞는-iptv-ux-ui-디자인",
+      "title": "뉴 미디어 환경에 맞는 IPTV UX/UI 디자인",
+      "sourceUrl": "https://brunch.co.kr/@plusx/92",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-10-31",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "UX",
+        "UI",
+        "조직문화"
+      ],
+      "summary": "뉴 미디어 환경에 맞는 IPTV UX/UI 디자인은 열여섯 번째 人(in)spiration | UX/UI 팀 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "사용자 경험 설계",
+        "인터페이스 구체화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 92,
+        "subtitle": "열여섯 번째 人(in)spiration | UX/UI 팀",
+        "readSeconds": 460,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-94-일잘러를-위한-2023년-캘린더",
+      "title": "일잘러를 위한 2023년 캘린더",
+      "sourceUrl": "https://brunch.co.kr/@plusx/94",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2022-12-12",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "PX"
+      ],
+      "summary": "일잘러를 위한 2023년 캘린더은 플러스엑스 오브젝트 신상을 소개합니다 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-35-플엑-익힘책-px-team-편",
+        "plusx-57-패션에-대한-플러스엑스의-해석-fix-nothing",
+        "plusx-63-플러스엑스가-만든-두-번째-사원증-듀얼프레임-제작기",
+        "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+        "plusx-87-new-컬러로-돌아온-듀얼프레임"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 94,
+        "subtitle": "플러스엑스 오브젝트 신상을 소개합니다",
+        "readSeconds": 196,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-97-빠르고-쉬운-탐색-카카오페이지-ux-ui-디자인",
+      "title": "빠르고 쉬운 탐색, 카카오페이지 UX/UI 디자인",
+      "sourceUrl": "https://brunch.co.kr/@plusx/97",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2023-03-09",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "UX",
+        "UI",
+        "조직문화"
+      ],
+      "summary": "빠르고 쉬운 탐색, 카카오페이지 UX/UI 디자인은 열일곱 번째 人(in)spiration | UX/UI 팀 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "사용자 경험 설계",
+        "인터페이스 구체화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 97,
+        "subtitle": "열일곱 번째 人(in)spiration | UX/UI 팀",
+        "readSeconds": 435,
+        "commentCount": 2
+      }
+    },
+    {
+      "id": "plusx-98-영감의-원천이-되는-코딩",
+      "title": "영감의 원천이 되는 코딩",
+      "sourceUrl": "https://brunch.co.kr/@plusx/98",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2023-03-24",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "DX",
+        "조직문화"
+      ],
+      "summary": "영감의 원천이 되는 코딩은 열여덟 번째 人(in)spiration | DX팀 권민지 디렉터 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 98,
+        "subtitle": "열여덟 번째 人(in)spiration | DX팀 권민지 디렉터",
+        "readSeconds": 453,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-99-사장님의-모든-순간을-함께한-브랜드-전략",
+      "title": "사장님의 모든 순간을 함께한 브랜드 전략",
+      "sourceUrl": "https://brunch.co.kr/@plusx/99",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2023-05-23",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "IX",
+        "조직문화"
+      ],
+      "summary": "사장님의 모든 순간을 함께한 브랜드 전략은 열아홉 번째 人(in)spiration | BX팀 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 99,
+        "subtitle": "열아홉 번째 人(in)spiration | BX팀",
+        "readSeconds": 563,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-100-커머스-플랫폼-파도-속에서-자사-웹사이트가-살아남는-법",
+      "title": "커머스 플랫폼 파도 속에서 자사 웹사이트가 살아남는 법",
+      "sourceUrl": "https://brunch.co.kr/@plusx/100",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2023-08-01",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "PX"
+      ],
+      "summary": "커머스 플랫폼 파도 속에서 자사 웹사이트가 살아남는 법은 플러스엑스 오브젝트 웹사이트 리뉴얼 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-35-플엑-익힘책-px-team-편",
+        "plusx-57-패션에-대한-플러스엑스의-해석-fix-nothing",
+        "plusx-63-플러스엑스가-만든-두-번째-사원증-듀얼프레임-제작기",
+        "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+        "plusx-87-new-컬러로-돌아온-듀얼프레임"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 100,
+        "subtitle": "플러스엑스 오브젝트 웹사이트 리뉴얼",
+        "readSeconds": 359,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-106-몰입되는-전시-웹사이트-디자인하기",
+      "title": "몰입되는 전시 웹사이트 디자인하기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/106",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-01-18",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "DX",
+        "조직문화"
+      ],
+      "summary": "몰입되는 전시 웹사이트 디자인하기은 스무 번째 人(in)spiration | DX팀 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 106,
+        "subtitle": "스무 번째 人(in)spiration | DX팀",
+        "readSeconds": 325,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-107-커머스-시장에서-돋보이는-패션-플랫폼-브랜드-전략",
+      "title": "커머스 시장에서 돋보이는 패션 플랫폼 브랜드 전략",
+      "sourceUrl": "https://brunch.co.kr/@plusx/107",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-01-30",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "IX",
+        "조직문화"
+      ],
+      "summary": "커머스 시장에서 돋보이는 패션 플랫폼 브랜드 전략은 스물한 번째 人(in)spiration | BX팀 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 107,
+        "subtitle": "스물한 번째 人(in)spiration | BX팀",
+        "readSeconds": 483,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-108-스토리보드-파워포인트에서-피그마로-이사합니다",
+      "title": "스토리보드, 파워포인트에서 피그마로 이사합니다.",
+      "sourceUrl": "https://brunch.co.kr/@plusx/108",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-03-05",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "스토리보드, 파워포인트에서 피그마로 이사합니다.은 더욱 빠르고 효율적인 스토리보드 작업기 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "작업 도구"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 108,
+        "subtitle": "더욱 빠르고 효율적인 스토리보드 작업기",
+        "readSeconds": 681,
+        "commentCount": 2
+      }
+    },
+    {
+      "id": "plusx-109-플러스엑스와-어도비가-함께-만든-ai-서비스",
+      "title": "플러스엑스와 어도비가 함께 만든 AI 서비스",
+      "sourceUrl": "https://brunch.co.kr/@plusx/109",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-03-10",
+      "accessedAt": "2026-05-29",
+      "category": "UX 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "플러스엑스와 어도비가 함께 만든 AI 서비스은 스물두 번째 人(in)spiration | AI’m 팀 맥락에서 UX 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UX 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사용자의 문제와 맥락을 먼저 구조화한 뒤 화면이나 기능을 정의한다.",
+        "논리와 근거가 필요한 결정은 리서치, 사례, 데이터로 보강한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "서비스 구조 설계와 리서치 계획",
+        "사용자 여정과 기능 우선순위 판단"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 109,
+        "subtitle": "스물두 번째 人(in)spiration | AI’m 팀",
+        "readSeconds": 695,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-110-스마트폰부터-키오스크까지-디바이스에-맞춘-화면-디자인",
+      "title": "스마트폰부터 키오스크까지, 디바이스에 맞춘 화면 디자인",
+      "sourceUrl": "https://brunch.co.kr/@plusx/110",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-03-28",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "UX",
+        "UI",
+        "조직문화"
+      ],
+      "summary": "스마트폰부터 키오스크까지, 디바이스에 맞춘 화면 디자인은 스물세 번째 人(in)spiration | UX팀 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 110,
+        "subtitle": "스물세 번째 人(in)spiration | UX팀",
+        "readSeconds": 433,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-111-제품-출시는-계획대로-되지-않아",
+      "title": "제품 출시는 계획대로 되지 않아",
+      "sourceUrl": "https://brunch.co.kr/@plusx/111",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-04-23",
+      "accessedAt": "2026-05-29",
+      "category": "프로덕트 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "PX"
+      ],
+      "summary": "제품 출시는 계획대로 되지 않아은 소비자의 니즈를 충족한 ID 카드 홀더 디자인하기 맥락에서 프로덕트 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "프로덕트 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "자체 제품 또는 굿즈 기획",
+        "물리적 접점과 브랜드 경험 연결"
+      ],
+      "connections": [
+        "plusx-35-플엑-익힘책-px-team-편",
+        "plusx-57-패션에-대한-플러스엑스의-해석-fix-nothing",
+        "plusx-63-플러스엑스가-만든-두-번째-사원증-듀얼프레임-제작기",
+        "plusx-86-플러스엑스-오브젝트-리브랜딩-이야기",
+        "plusx-87-new-컬러로-돌아온-듀얼프레임"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 111,
+        "subtitle": "소비자의 니즈를 충족한 ID 카드 홀더 디자인하기",
+        "readSeconds": 385,
+        "commentCount": 2
+      }
+    },
+    {
+      "id": "plusx-112-플러스엑스-일과-삶의-균형을-위한-디자인",
+      "title": "플러스엑스, 일과 삶의 균형을 위한 디자인",
+      "sourceUrl": "https://brunch.co.kr/@plusx/112",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-06-13",
+      "accessedAt": "2026-05-29",
+      "category": "조직 문화",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "EX",
+        "조직문화"
+      ],
+      "summary": "플러스엑스, 일과 삶의 균형을 위한 디자인은 스물네 번째 人(in)spiration | EX, BX팀 맥락에서 조직 문화 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "조직 문화",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "팀의 역할은 산출물뿐 아니라 구성원이 몰입할 수 있는 환경까지 포함한다.",
+        "조직 운영 데이터와 직원 경험은 크리에이티브 품질을 뒷받침하는 기반이다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "팀 소개, 채용, 온보딩, 일하는 방식 정리",
+        "크리에이티브 조직 운영 정책 설계"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 112,
+        "subtitle": "스물네 번째 人(in)spiration | EX, BX팀",
+        "readSeconds": 551,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-113-ai가-만든-브랜드-포파라치",
+      "title": "AI가 만든 브랜드, 포파라치",
+      "sourceUrl": "https://brunch.co.kr/@plusx/113",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-07-17",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX"
+      ],
+      "summary": "AI가 만든 브랜드, 포파라치은 BX 디자이너가 들려주는 AI 디자인 & 노하우 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 113,
+        "subtitle": "BX 디자이너가 들려주는 AI 디자인 & 노하우",
+        "readSeconds": 832,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-114-생성형-ai로-디자인하는-tip",
+      "title": "생성형 AI로 디자인하는 Tip",
+      "sourceUrl": "https://brunch.co.kr/@plusx/114",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-11-11",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "생성형 AI로 디자인하는 Tip은 플러스엑스 AI 디자이너가 알려주는 생성형 AI 활용법 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-51-디자인회사의-개발-이야기",
+        "plusx-61-그룹웨어-직접-만들어봤습니다",
+        "plusx-72-생동적인-디자인을-위한-크리에이티브-코딩",
+        "plusx-88-가상공간에서의-쇼핑을-디자인하다-무신사-vr-room"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 114,
+        "subtitle": "플러스엑스 AI 디자이너가 알려주는 생성형 AI 활용법",
+        "readSeconds": 609,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-115-z축-하나-추가했을-뿐인데",
+      "title": "Z축 하나 추가했을 뿐인데",
+      "sourceUrl": "https://brunch.co.kr/@plusx/115",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-12-17",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX"
+      ],
+      "summary": "Z축 하나 추가했을 뿐인데은 채널A 리브랜딩 프로젝트 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 115,
+        "subtitle": "채널A 리브랜딩 프로젝트",
+        "readSeconds": 630,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-116-브랜드의-시간을-디자인하다",
+      "title": "브랜드의 시간을 디자인하다",
+      "sourceUrl": "https://brunch.co.kr/@plusx/116",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-12-19",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX"
+      ],
+      "summary": "브랜드의 시간을 디자인하다은 브랜드의 현재와 미래를 이어주는 어드밴스 랩의 여정 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 116,
+        "subtitle": "브랜드의 현재와 미래를 이어주는 어드밴스 랩의 여정",
+        "readSeconds": 586,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-117-디자인을-경험하다-경험을-디자인하다",
+      "title": "디자인을 경험하다,  경험을 디자인하다",
+      "sourceUrl": "https://brunch.co.kr/@plusx/117",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2024-12-24",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "조직문화"
+      ],
+      "summary": "디자인을 경험하다,  경험을 디자인하다은 브랜드와 기술, 도전을 통해 성장하는 BX3팀 이야기 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 117,
+        "subtitle": "브랜드와 기술, 도전을 통해 성장하는 BX3팀 이야기",
+        "readSeconds": 586,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-118-01-플러스엑스가-업무용-ai를-만든다면",
+      "title": "#01 플러스엑스가 업무용 AI를 만든다면? ",
+      "sourceUrl": "https://brunch.co.kr/@plusx/118",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-01-21",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "리서치",
+        "조직문화"
+      ],
+      "summary": "#01 플러스엑스가 업무용 AI를 만든다면? 은 15년의 디자인 경험을 AI에 담다. 플러스엑스의 디자인 인텔리전스 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "리서치 기반 판단",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 118,
+        "subtitle": "15년의 디자인 경험을 AI에 담다. 플러스엑스의 디자인 인텔리전스",
+        "readSeconds": 320,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-119-02-플러스엑스가-업무용-ai를-만든다면",
+      "title": "#02 플러스엑스가 업무용 AI를 만든다면?",
+      "sourceUrl": "https://brunch.co.kr/@plusx/119",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-01-22",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "#02 플러스엑스가 업무용 AI를 만든다면?은 15년의 디자인 경험을 AI에 담다. 플러스엑스의 디자인 인텔리전스 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 119,
+        "subtitle": "15년의 디자인 경험을 AI에 담다. 플러스엑스의 디자인 인텔리전스",
+        "readSeconds": 847,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-122-코오롱몰의-키-컬러가-그린과-다크플럼이-된-이유는",
+      "title": "코오롱몰의 키 컬러가 그린과 다크플럼이 된 이유는?",
+      "sourceUrl": "https://brunch.co.kr/@plusx/122",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-02-28",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "코오롱몰의 키 컬러가 그린과 다크플럼이 된 이유는?은 코오롱몰 리뉴얼 프로젝트 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-56-플엑익힘책-ui-team편",
+        "plusx-74-새로운-대표들이-꿈꾸는-플러스엑스",
+        "plusx-77-디자인-회사의-ui-ux-디자이너",
+        "plusx-92-뉴-미디어-환경에-맞는-iptv-ux-ui-디자인",
+        "plusx-97-빠르고-쉬운-탐색-카카오페이지-ux-ui-디자인"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 122,
+        "subtitle": "코오롱몰 리뉴얼 프로젝트",
+        "readSeconds": 627,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-126-ai-선정-올해의-디자이너",
+      "title": "AI 선정, 올해의 디자이너",
+      "sourceUrl": "https://brunch.co.kr/@plusx/126",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-03-18",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "DX",
+        "조직문화"
+      ],
+      "summary": "AI 선정, 올해의 디자이너은 기술에 감성을 더한 DX팀의 연말 이벤트, YEPP 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 126,
+        "subtitle": "기술에 감성을 더한 DX팀의 연말 이벤트, YEPP",
+        "readSeconds": 499,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-124-1-ai를-만난-그래픽-에셋",
+      "title": "#1 AI를 만난 그래픽 에셋",
+      "sourceUrl": "https://brunch.co.kr/@plusx/124",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-03-20",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "프로세스",
+        "조직문화"
+      ],
+      "summary": "#1 AI를 만난 그래픽 에셋은 브랜드의 현재와 미래를 이어주는 어드밴스 랩의 여정 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "디자인과 개발 협업",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 124,
+        "subtitle": "브랜드의 현재와 미래를 이어주는 어드밴스 랩의 여정",
+        "readSeconds": 351,
+        "commentCount": 4
+      }
+    },
+    {
+      "id": "plusx-125-2-퇴근을-지키는-리드타임-줄이기",
+      "title": "#2 퇴근을 지키는 리드타임 줄이기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/125",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-03-24",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "프로세스",
+        "조직문화"
+      ],
+      "summary": "#2 퇴근을 지키는 리드타임 줄이기은 브랜드의 현재와 미래를 이어주는 어드밴스 랩의 여정 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "디자인과 개발 협업",
+        "작업 도구"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 125,
+        "subtitle": "브랜드의 현재와 미래를 이어주는 어드밴스 랩의 여정",
+        "readSeconds": 266,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-123-회사-밖으로-한-발짝-그날을-품은-사진-한-장",
+      "title": "회사 밖으로 한 발짝. 그날을 품은 사진 한 장",
+      "sourceUrl": "https://brunch.co.kr/@plusx/123",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-04-01",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "회사 밖으로 한 발짝. 그날을 품은 사진 한 장은 플러스엑스의 이벤트 복지 - 제주도의 '공간 7' 다녀오기 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 123,
+        "subtitle": "플러스엑스의 이벤트 복지 - 제주도의 '공간 7' 다녀오기",
+        "readSeconds": 384,
+        "commentCount": 3
+      }
+    },
+    {
+      "id": "plusx-127-조율하는-리더십-명확함이-곧-배려입니다",
+      "title": "조율하는 리더십, 명확함이 곧 배려입니다",
+      "sourceUrl": "https://brunch.co.kr/@plusx/127",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-04-18",
+      "accessedAt": "2026-05-29",
+      "category": "조직 문화",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "EX"
+      ],
+      "summary": "조율하는 리더십, 명확함이 곧 배려입니다은 플러스엑스가 발견한 'Clear is Kind'의 의미 맥락에서 조직 문화 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "조직 문화",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "팀의 역할은 산출물뿐 아니라 구성원이 몰입할 수 있는 환경까지 포함한다.",
+        "조직 운영 데이터와 직원 경험은 크리에이티브 품질을 뒷받침하는 기반이다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "팀 소개, 채용, 온보딩, 일하는 방식 정리",
+        "크리에이티브 조직 운영 정책 설계"
+      ],
+      "connections": [
+        "plusx-55-플엑익힘책-ex-team-편",
+        "plusx-61-그룹웨어-직접-만들어봤습니다",
+        "plusx-81-요즘-어떤-툴로-작업하세요",
+        "plusx-83-드디어-플러스엑스-멤버가-되었습니다",
+        "plusx-112-플러스엑스-일과-삶의-균형을-위한-디자인"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 127,
+        "subtitle": "플러스엑스가 발견한 'Clear is Kind'의 의미",
+        "readSeconds": 410,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-128-해외-클라이언트와-작업하기",
+      "title": "해외 클라이언트와 작업하기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/128",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-05-26",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "해외 클라이언트와 작업하기은 핵심은 바로, 커뮤니케이션 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 128,
+        "subtitle": "핵심은 바로, 커뮤니케이션",
+        "readSeconds": 338,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-129-잘-하지만-다-해주지는-못하는-ai",
+      "title": "잘 하지만 다 해주지는 못하는 AI",
+      "sourceUrl": "https://brunch.co.kr/@plusx/129",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-06-23",
+      "accessedAt": "2026-05-29",
+      "category": "개발 경험",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "프로세스",
+        "조직문화"
+      ],
+      "summary": "잘 하지만 다 해주지는 못하는 AI은 프롬프트 디자이너의 AI 활용기 맥락에서 개발 경험 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "개발 경험",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "디자인 의도를 구현 가능한 시스템, 모션, 인터랙션으로 번역한다.",
+        "개발자는 결과물의 표현 품질과 운영 가능성을 함께 책임진다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "디자인-개발 협업 방식 정리",
+        "인터랙션 구현과 기술 검토"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 129,
+        "subtitle": "프롬프트 디자이너의 AI 활용기",
+        "readSeconds": 402,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-130-지속적인-운영과-확장이-가능한-디자인-시스템-구축하기",
+      "title": "지속적인 운영과 확장이 가능한 디자인 시스템 구축하기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/130",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-07-20",
+      "accessedAt": "2026-05-29",
+      "category": "디자인 시스템",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "프로세스",
+        "디자인시스템",
+        "조직문화"
+      ],
+      "summary": "지속적인 운영과 확장이 가능한 디자인 시스템 구축하기은 무신사 2.0 디자인 시스템 맥락에서 디자인 시스템 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "디자인 시스템",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "컴포넌트 운영 기준 수립",
+        "스타일 가이드와 템플릿 관리"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 130,
+        "subtitle": "무신사 2.0 디자인 시스템",
+        "readSeconds": 505,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-131-ai가-바꾼-디자인-워크플로우",
+      "title": "AI가 바꾼 디자인 워크플로우",
+      "sourceUrl": "https://brunch.co.kr/@plusx/131",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-08-20",
+      "accessedAt": "2026-05-29",
+      "category": "디자인 프로세스",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "프로세스"
+      ],
+      "summary": "AI가 바꾼 디자인 워크플로우은 플러스엑스 15주년 세미나에서 본 AI와 디자인 맥락에서 디자인 프로세스 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "디자인 프로세스",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강"
+      ],
+      "connections": [
+        "plusx-124-1-ai를-만난-그래픽-에셋",
+        "plusx-125-2-퇴근을-지키는-리드타임-줄이기",
+        "plusx-129-잘-하지만-다-해주지는-못하는-ai",
+        "plusx-130-지속적인-운영과-확장이-가능한-디자인-시스템-구축하기",
+        "plusx-135-진짜-인사이트를-전달하는-콘퍼런스-기획하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 131,
+        "subtitle": "플러스엑스 15주년 세미나에서 본 AI와 디자인",
+        "readSeconds": 384,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-132-정지된-화면을-넘어-프레이머의-리허설-현장으로",
+      "title": "정지된 화면을 넘어,  프레이머의 리허설 현장으로",
+      "sourceUrl": "https://brunch.co.kr/@plusx/132",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-08-31",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "UI"
+      ],
+      "summary": "정지된 화면을 넘어,  프레이머의 리허설 현장으로은 피그마에서 프레이머로, 무대를 확장한 플러스엑스 UXUI 디자이너의 선택 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-56-플엑익힘책-ui-team편",
+        "plusx-74-새로운-대표들이-꿈꾸는-플러스엑스",
+        "plusx-77-디자인-회사의-ui-ux-디자이너",
+        "plusx-92-뉴-미디어-환경에-맞는-iptv-ux-ui-디자인",
+        "plusx-97-빠르고-쉬운-탐색-카카오페이지-ux-ui-디자인"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 132,
+        "subtitle": "피그마에서 프레이머로, 무대를 확장한 플러스엑스 UXUI 디자이너의 선택",
+        "readSeconds": 287,
+        "commentCount": 2
+      }
+    },
+    {
+      "id": "plusx-133-브랜드의-본질과-자부심을-지킨-도루코-리브랜딩",
+      "title": "브랜드의 본질과 자부심을 지킨 도루코 리브랜딩",
+      "sourceUrl": "https://brunch.co.kr/@plusx/133",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-09-14",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX"
+      ],
+      "summary": "브랜드의 본질과 자부심을 지킨 도루코 리브랜딩은 70년 헤리티지를 가진 브랜드 리뉴얼하기 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 133,
+        "subtitle": "70년 헤리티지를 가진 브랜드 리뉴얼하기",
+        "readSeconds": 417,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-134-6명의-현업-디자이너가-말하는-그래픽-디자인의-확장",
+      "title": "6명의 현업 디자이너가 말하는 그래픽 디자인의 확장",
+      "sourceUrl": "https://brunch.co.kr/@plusx/134",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-10-12",
+      "accessedAt": "2026-05-29",
+      "category": "조직 문화",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "조직문화"
+      ],
+      "summary": "6명의 현업 디자이너가 말하는 그래픽 디자인의 확장은 SHARE X INSIGHT OUT 맥락에서 조직 문화 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "조직 문화",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "팀의 역할은 산출물뿐 아니라 구성원이 몰입할 수 있는 환경까지 포함한다.",
+        "조직 운영 데이터와 직원 경험은 크리에이티브 품질을 뒷받침하는 기반이다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "팀 소개, 채용, 온보딩, 일하는 방식 정리",
+        "크리에이티브 조직 운영 정책 설계"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 134,
+        "subtitle": "SHARE X INSIGHT OUT",
+        "readSeconds": 375,
+        "commentCount": 1
+      }
+    },
+    {
+      "id": "plusx-135-진짜-인사이트를-전달하는-콘퍼런스-기획하기",
+      "title": "‘진짜’ 인사이트를 전달하는 콘퍼런스 기획하기",
+      "sourceUrl": "https://brunch.co.kr/@plusx/135",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-10-29",
+      "accessedAt": "2026-05-29",
+      "category": "디자인 프로세스",
+      "tags": [
+        "PlusX",
+        "플엑익힘책"
+      ],
+      "summary": "‘진짜’ 인사이트를 전달하는 콘퍼런스 기획하기은 쉐어엑스 인사이트 아웃 비하인드 맥락에서 디자인 프로세스 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "디자인 프로세스",
+        "출처 기반 학습",
+        "실무 지식화"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "사례를 팀 역할, 문제의식, 접근 방식, 적용 조건으로 나눠 재사용한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강"
+      ],
+      "connections": [
+        "plusx-131-ai가-바꾼-디자인-워크플로우"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 135,
+        "subtitle": "쉐어엑스 인사이트 아웃 비하인드",
+        "readSeconds": 515,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-136-플러스엑스가-15년의-브랜드-마크를-다시-펼쳐본-방법",
+      "title": "플러스엑스가 15년의 브랜드 마크를 다시 펼쳐본 방법",
+      "sourceUrl": "https://brunch.co.kr/@plusx/136",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-11-25",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "프로세스"
+      ],
+      "summary": "플러스엑스가 15년의 브랜드 마크를 다시 펼쳐본 방법은 Part 1. Xs.Ulp를 찾아가는 과정의 기록 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 136,
+        "subtitle": "Part 1. Xs.Ulp를 찾아가는 과정의 기록",
+        "readSeconds": 287,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-137-t우주-3d-아이콘-제작의-새로운-표준-특화-ai",
+      "title": "T우주 3D 아이콘 제작의 새로운 표준, 특화 AI",
+      "sourceUrl": "https://brunch.co.kr/@plusx/137",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2025-12-03",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "프로세스",
+        "조직문화"
+      ],
+      "summary": "T우주 3D 아이콘 제작의 새로운 표준, 특화 AI은 2일을 10분으로 단축시킨 플러스엑스의 AI 피그마 플러그인 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "디자인과 개발 협업",
+        "작업 도구"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 137,
+        "subtitle": "2일을 10분으로 단축시킨 플러스엑스의  AI 피그마 플러그인",
+        "readSeconds": 603,
+        "commentCount": 6
+      }
+    },
+    {
+      "id": "plusx-140-세리프와-산세리프를-결합한-로고-디자인",
+      "title": "세리프와 산세리프를 결합한 로고 디자인",
+      "sourceUrl": "https://brunch.co.kr/@plusx/140",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2026-01-06",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX"
+      ],
+      "summary": "세리프와 산세리프를 결합한 로고 디자인은 브랜드 코어를 기획부터 비주얼까지 녹여낸 플레디스 리브랜딩 프로젝트 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 140,
+        "subtitle": "브랜드 코어를 기획부터 비주얼까지 녹여낸 플레디스 리브랜딩 프로젝트",
+        "readSeconds": 536,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-141-플러스엑스-ai-자산-내재화의-시작-genai",
+      "title": "플러스엑스 AI 자산 내재화의 시작, GenAI",
+      "sourceUrl": "https://brunch.co.kr/@plusx/141",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2026-01-19",
+      "accessedAt": "2026-05-29",
+      "category": "조직 문화",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "EX",
+        "조직문화"
+      ],
+      "summary": "플러스엑스 AI 자산 내재화의 시작, GenAI은 구성원은 더 잘 쓸 수 있게, 조직은 더 잘 쌓을 수 있게 맥락에서 조직 문화 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "조직 문화",
+        "출처 기반 학습",
+        "실무 지식화",
+        "디자인과 개발 협업"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "팀의 역할은 산출물뿐 아니라 구성원이 몰입할 수 있는 환경까지 포함한다.",
+        "조직 운영 데이터와 직원 경험은 크리에이티브 품질을 뒷받침하는 기반이다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "팀 소개, 채용, 온보딩, 일하는 방식 정리",
+        "크리에이티브 조직 운영 정책 설계"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 141,
+        "subtitle": "구성원은 더 잘 쓸 수 있게, 조직은 더 잘 쌓을 수 있게",
+        "readSeconds": 552,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-143-잡코리아의-새-이름-웍스피어-네이밍과-로고-디자인",
+      "title": "잡코리아의 새 이름, 웍스피어 네이밍과 로고 디자인",
+      "sourceUrl": "https://brunch.co.kr/@plusx/143",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2026-05-07",
+      "accessedAt": "2026-05-29",
+      "category": "브랜드 전략",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "디자인시스템"
+      ],
+      "summary": "잡코리아의 새 이름, 웍스피어 네이밍과 로고 디자인은 Part 1. 새 기업명과 로고의 탄생 맥락에서 브랜드 전략 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "브랜드 전략",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "직원 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "브랜드의 본질, 시장 맥락, 사용자 인상을 함께 검토한다.",
+        "전략은 시각 결과물이 아니라 운영과 커뮤니케이션 기준까지 이어져야 한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "브랜드 정의, 네이밍, 포지셔닝 작업",
+        "BX/IX 리서치와 컨셉 정리"
+      ],
+      "connections": [
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-68-브랜드와-소비자를-이어주는-다리를-짓는-사람들",
+        "plusx-75-플러스엑스가-시도하는-메타버스-시대를-위한-새로운-경험",
+        "plusx-78-같은-듯-다른-두-기업의-통합-브랜드-디자인하기"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 143,
+        "subtitle": "Part 1. 새 기업명과 로고의 탄생",
+        "readSeconds": 372,
+        "commentCount": 0
+      }
+    },
+    {
+      "id": "plusx-144-ai-시대를-맞이하는-웍스피어-비주얼-아이덴티티-스토리",
+      "title": "AI 시대를 맞이하는 웍스피어 비주얼 아이덴티티 스토리",
+      "sourceUrl": "https://brunch.co.kr/@plusx/144",
+      "sourceName": "Brunch",
+      "author": "플러스엑스",
+      "publishedAt": "2026-05-11",
+      "accessedAt": "2026-05-29",
+      "category": "UI 디자인",
+      "tags": [
+        "PlusX",
+        "플엑익힘책",
+        "BX",
+        "프로세스",
+        "조직문화"
+      ],
+      "summary": "AI 시대를 맞이하는 웍스피어 비주얼 아이덴티티 스토리은 Part 2. 비주얼 아이덴티티 & 웹사이트 & 리브랜딩 필름 제작기 맥락에서 UI 디자인 관점의 사례를 출처 기반 지식으로 정리한 카드다. 원문 전체를 저장하지 않고, 프로젝트에서 재사용할 수 있는 개념, 원칙, 적용 상황으로 재구성했다.",
+      "concepts": [
+        "UI 디자인",
+        "출처 기반 학습",
+        "실무 지식화",
+        "브랜드 본질",
+        "디자인과 개발 협업",
+        "디지털 경험"
+      ],
+      "principles": [
+        "출처 메타데이터와 해석을 분리해서 저장한다.",
+        "원문을 복제하지 않고 실무 판단 기준으로 재구성한다.",
+        "와이어프레임 이후의 UI는 감성, 톤앤매너, 인터랙션을 구체화하는 단계다.",
+        "시각적 편안함과 심리적 편안함을 모두 고려해 접점을 설계한다."
+      ],
+      "applications": [
+        "프로젝트 킥오프 전 유사 사례 탐색",
+        "디자인 리뷰에서 판단 기준 보강",
+        "화면 콘셉트, 톤앤매너, 인터랙션 설계",
+        "제안서나 프로토타입의 설득 구조 작성"
+      ],
+      "connections": [
+        "plusx-37-플엑-익힘책-mx-team-편",
+        "plusx-38-플엑-익힘책-dx-team-편",
+        "plusx-40-플엑-익힘책-bx-team편",
+        "plusx-48-플엑-익힘책-ix-team편",
+        "plusx-50-플엑-익힘책-ux-team-편"
+      ],
+      "verificationStatus": "verified",
+      "sourceMeta": {
+        "magazineNo": 54747,
+        "articleNo": 144,
+        "subtitle": "Part 2. 비주얼 아이덴티티 & 웹사이트 & 리브랜딩 필름 제작기",
+        "readSeconds": 690,
+        "commentCount": 1
+      }
+    }
+  ]
+}
