@@ -16,6 +16,8 @@ function parseArgs(argv) {
     urls: [],
     urlFile: "",
     queryOutPath: "",
+    searchOutPath: "",
+    searchMockHtml: "",
     reviewFile: "",
     dryRun: false,
     skipBuild: false
@@ -46,6 +48,12 @@ function parseArgs(argv) {
     } else if (value === "--query-out") {
       const next = argv[index + 1] || defaultQueryOutPath;
       args.queryOutPath = path.resolve(repoRoot, next);
+      index += 1;
+    } else if (value === "--search-out") {
+      args.searchOutPath = path.resolve(repoRoot, argv[index + 1] || "knowledge/data/search-source-seeds.json");
+      index += 1;
+    } else if (value === "--search-mock-html") {
+      args.searchMockHtml = path.resolve(repoRoot, argv[index + 1] || "");
       index += 1;
     } else if (value === "--dry-run") {
       args.dryRun = true;
@@ -104,6 +112,13 @@ async function main() {
   if (args.dryRun) collectArgs.push("--dry-run");
   steps.push(runNode(collectArgs));
 
+  if (args.searchOutPath) {
+    if (!args.queryOutPath) throw new Error("--search-out requires --query-out <path>");
+    const searchArgs = ["scripts/search-discovery.mjs", "--query-file", args.queryOutPath, "--out", args.searchOutPath, "--limit", String(args.limit)];
+    if (args.searchMockHtml) searchArgs.push("--mock-html", args.searchMockHtml);
+    steps.push(runNode(searchArgs));
+  }
+
   if (!args.skipBuild) {
     steps.push(runNode(["scripts/build-knowledge-index.mjs"]));
   }
@@ -111,6 +126,7 @@ async function main() {
   const failed = steps.filter((step) => step.status !== 0);
   const applyStep = args.reviewFile ? steps[0] : null;
   const collectStep = args.reviewFile ? steps[1] : steps[0];
+  const searchStep = args.searchOutPath ? steps.find((step) => step.command.includes("scripts/search-discovery.mjs")) : null;
   const report = {
     version: 1,
     generatedAt: new Date().toISOString(),
@@ -122,9 +138,12 @@ async function main() {
     urls: args.urls.map((sourceUrl) => (/^https?:\/\//.test(sourceUrl) ? sourceUrl : path.relative(repoRoot, sourceUrl))),
     urlFile: args.urlFile ? path.relative(repoRoot, args.urlFile) : "",
     queryOut: args.queryOutPath ? path.relative(repoRoot, args.queryOutPath) : "",
+    searchOut: args.searchOutPath ? path.relative(repoRoot, args.searchOutPath) : "",
+    searchMockHtml: args.searchMockHtml ? path.relative(repoRoot, args.searchMockHtml) : "",
     reviewFile: args.reviewFile ? path.relative(repoRoot, args.reviewFile) : "",
     reviewActions: await readReviewActionCount(args.reviewFile),
     collect: parseJsonOutput(collectStep),
+    search: searchStep ? parseJsonOutput(searchStep) : null,
     apply: applyStep ? parseJsonOutput(applyStep) : null,
     buildStatus: args.skipBuild ? "skipped" : steps[steps.length - 1].status,
     steps

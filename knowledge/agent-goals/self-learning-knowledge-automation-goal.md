@@ -33,6 +33,8 @@ node scripts/collect-knowledge.mjs --feed-file knowledge/data/feed-seeds.example
 node scripts/collect-knowledge.mjs --url-file knowledge/data/url-seeds.example.txt
 node scripts/collect-knowledge.mjs --url https://example.com/source
 node scripts/collect-knowledge.mjs --query-out knowledge/data/discovery-queries.json
+node scripts/search-discovery.mjs --query-file knowledge/data/discovery-queries.json --out knowledge/data/search-source-seeds.json
+node scripts/collect-knowledge.mjs --source-file knowledge/data/search-source-seeds.json
 ```
 
-Use `--query-out` when the next step needs a human-search handoff or a future browser/search adapter input.
+Use `--query-out` when the next step needs a human-search handoff. Use `scripts/search-discovery.mjs` to turn those queries into source metadata seeds that can be reviewed through `--source-file`.

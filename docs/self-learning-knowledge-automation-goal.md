@@ -35,7 +35,8 @@ Current limitations:
 - Durable apply flow exists for approve, reject, merge, and review-file workflows.
 - Discovery supports deterministic generation, curated JSON sources, RSS/Atom feed metadata, and manual URL metadata extraction.
 - Discovery can export structured search-query handoffs for human review or later search/browser adapters.
-- Live search/browser/API discovery is not yet fully automated.
+- Search discovery can convert query handoffs into source metadata seeds with `scripts/search-discovery.mjs`.
+- Browser/API discovery is not yet fully automated.
 - Git commit and push remain explicit operator actions.
 
 Implemented command examples:
@@ -45,6 +46,9 @@ node scripts/collect-knowledge.mjs --dry-run --source-file knowledge/data/source
 node scripts/collect-knowledge.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
 node scripts/collect-knowledge.mjs --dry-run --url-file knowledge/data/url-seeds.example.txt --limit 5
 node scripts/collect-knowledge.mjs --dry-run --query-out /private/tmp/xlevel-discovery-queries.json --limit 5
+node scripts/search-discovery.mjs --query-file /private/tmp/xlevel-discovery-queries.json --out /private/tmp/xlevel-search-sources.json --limit 5
+node scripts/collect-knowledge.mjs --dry-run --source-file /private/tmp/xlevel-search-sources.json --limit 5
+node scripts/run-learning-loop.mjs --dry-run --query-out /private/tmp/xlevel-loop-queries.json --search-out /private/tmp/xlevel-loop-sources.json --limit 5
 node scripts/run-learning-loop.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
 PORT=8091 node scripts/knowledge-server.mjs
 ```
@@ -137,7 +141,8 @@ Initial adapters may include:
 - RSS or feed input: implemented with `--feed-file`
 - manual URL input: implemented with `--url` and `--url-file`
 - search query output for human review: implemented with `--query-out`
-- later: browser or search API integration
+- search result metadata expansion: implemented with `scripts/search-discovery.mjs`
+- later: browser or dedicated search API integration
 
 For each discovered source, collect:
 
