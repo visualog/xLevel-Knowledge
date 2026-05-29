@@ -18,6 +18,7 @@ function parseArgs(argv) {
     queryOutPath: "",
     searchOutPath: "",
     searchMockHtml: "",
+    ingestSearchResults: false,
     reviewFile: "",
     dryRun: false,
     skipBuild: false
@@ -55,6 +56,8 @@ function parseArgs(argv) {
     } else if (value === "--search-mock-html") {
       args.searchMockHtml = path.resolve(repoRoot, argv[index + 1] || "");
       index += 1;
+    } else if (value === "--ingest-search-results") {
+      args.ingestSearchResults = true;
     } else if (value === "--dry-run") {
       args.dryRun = true;
     } else if (value === "--skip-build") {
@@ -119,6 +122,13 @@ async function main() {
     steps.push(runNode(searchArgs));
   }
 
+  if (args.ingestSearchResults) {
+    if (!args.searchOutPath) throw new Error("--ingest-search-results requires --search-out <path>");
+    const ingestArgs = ["scripts/collect-knowledge.mjs", "--source-file", args.searchOutPath, "--limit", String(args.limit)];
+    if (args.dryRun) ingestArgs.push("--dry-run");
+    steps.push(runNode(ingestArgs));
+  }
+
   if (!args.skipBuild) {
     steps.push(runNode(["scripts/build-knowledge-index.mjs"]));
   }
@@ -127,6 +137,9 @@ async function main() {
   const applyStep = args.reviewFile ? steps[0] : null;
   const collectStep = args.reviewFile ? steps[1] : steps[0];
   const searchStep = args.searchOutPath ? steps.find((step) => step.command.includes("scripts/search-discovery.mjs")) : null;
+  const searchIngestStep = args.ingestSearchResults
+    ? steps.find((step) => step.command.includes("scripts/collect-knowledge.mjs --source-file"))
+    : null;
   const report = {
     version: 1,
     generatedAt: new Date().toISOString(),
@@ -140,10 +153,12 @@ async function main() {
     queryOut: args.queryOutPath ? path.relative(repoRoot, args.queryOutPath) : "",
     searchOut: args.searchOutPath ? path.relative(repoRoot, args.searchOutPath) : "",
     searchMockHtml: args.searchMockHtml ? path.relative(repoRoot, args.searchMockHtml) : "",
+    ingestSearchResults: args.ingestSearchResults,
     reviewFile: args.reviewFile ? path.relative(repoRoot, args.reviewFile) : "",
     reviewActions: await readReviewActionCount(args.reviewFile),
     collect: parseJsonOutput(collectStep),
     search: searchStep ? parseJsonOutput(searchStep) : null,
+    searchIngest: searchIngestStep ? parseJsonOutput(searchIngestStep) : null,
     apply: applyStep ? parseJsonOutput(applyStep) : null,
     buildStatus: args.skipBuild ? "skipped" : steps[steps.length - 1].status,
     steps

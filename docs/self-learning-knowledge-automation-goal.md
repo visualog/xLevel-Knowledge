@@ -49,6 +49,7 @@ node scripts/collect-knowledge.mjs --dry-run --query-out /private/tmp/xlevel-dis
 node scripts/search-discovery.mjs --query-file /private/tmp/xlevel-discovery-queries.json --out /private/tmp/xlevel-search-sources.json --limit 5
 node scripts/collect-knowledge.mjs --dry-run --source-file /private/tmp/xlevel-search-sources.json --limit 5
 node scripts/run-learning-loop.mjs --dry-run --query-out /private/tmp/xlevel-loop-queries.json --search-out /private/tmp/xlevel-loop-sources.json --limit 5
+node scripts/run-learning-loop.mjs --dry-run --query-out /private/tmp/xlevel-loop-queries.json --search-out /private/tmp/xlevel-loop-sources.json --ingest-search-results --limit 5
 node scripts/run-learning-loop.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
 PORT=8091 node scripts/knowledge-server.mjs
 ```
@@ -178,6 +179,14 @@ node scripts/run-learning-loop.mjs
 ```
 
 This should orchestrate discovery, candidate generation, validation, and reporting without automatically approving unverified sources.
+
+Search-backed loop example:
+
+```bash
+node scripts/run-learning-loop.mjs --query-out knowledge/data/discovery-queries.json --search-out knowledge/data/search-source-seeds.json --ingest-search-results --limit 20
+```
+
+This writes search source seeds, turns them into review-needed candidates, rebuilds the index, and still requires explicit review before approval.
 
 ## Product Rules
 
