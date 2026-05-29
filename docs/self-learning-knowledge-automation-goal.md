@@ -51,6 +51,7 @@ node scripts/collect-knowledge.mjs --dry-run --source-file /private/tmp/xlevel-s
 node scripts/run-learning-loop.mjs --dry-run --query-out /private/tmp/xlevel-loop-queries.json --search-out /private/tmp/xlevel-loop-sources.json --limit 5
 node scripts/run-learning-loop.mjs --dry-run --query-out /private/tmp/xlevel-loop-queries.json --search-out /private/tmp/xlevel-loop-sources.json --ingest-search-results --limit 5
 node scripts/run-automation-cycle.mjs --config knowledge/data/automation-cycle.example.json
+node scripts/install-automation-scheduler.mjs print
 node scripts/run-learning-loop.mjs --dry-run --feed-file knowledge/data/feed-seeds.example.xml --limit 5
 PORT=8091 node scripts/knowledge-server.mjs
 ```
@@ -196,6 +197,22 @@ node scripts/run-automation-cycle.mjs --config knowledge/data/automation-cycle.e
 ```
 
 The example config is dry-run by default and is suitable for schedulers or manual repeated checks. Use `--write` only when the operator intentionally wants the configured cycle to write its outputs.
+
+macOS launchd scheduler preview:
+
+```bash
+node scripts/install-automation-scheduler.mjs print
+```
+
+Install only when ready:
+
+```bash
+node scripts/install-automation-scheduler.mjs install
+node scripts/install-automation-scheduler.mjs status
+node scripts/install-automation-scheduler.mjs uninstall
+```
+
+The generated launchd job calls the dry-run automation config by default.
 
 ## Product Rules
 
